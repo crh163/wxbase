@@ -1,4 +1,4 @@
-package com.crh.wxbase.utils;
+package com.crh.wxbase.common.utils;
 
 import com.alibaba.excel.EasyExcelFactory;
 import com.alibaba.excel.ExcelWriter;
@@ -6,7 +6,6 @@ import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import com.alibaba.excel.metadata.BaseRowModel;
 import com.alibaba.excel.metadata.Sheet;
-import com.crh.wxbase.dto.GenExcelModel;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;

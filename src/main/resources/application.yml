@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+#mysql
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/ins_test?characterEncoding=utf8&useSSL=false
+    username: root
+    password: chenrenhao
+    driverClassName: com.mysql.jdbc.Driver
+
+#mybatis-plus
+mybatis-plus:
+  mapperLocations: classpath:com/crh/wxbase/gsc/mapper/*.xml
+  typeAliasesPackage: com.crh.wxbase.gsc.entity
+  configuration:
+    mapUnderscoreToCamelCase: true
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      column-underline: true #驼峰下划线转换
+      logic-delete-value: 0 #逻辑删除配置
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false

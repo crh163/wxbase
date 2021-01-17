@@ -1,9 +1,9 @@
-package com.crh.wxbase.generator;
+package com.crh.wxbase.gen.generator;
 
 import com.alibaba.excel.metadata.Sheet;
-import com.crh.wxbase.constant.CommonConsts;
-import com.crh.wxbase.dto.GenExcelModel;
-import com.crh.wxbase.utils.ExcelUtil;
+import com.crh.wxbase.common.constant.CommonConsts;
+import com.crh.wxbase.gen.dto.GenExcelModel;
+import com.crh.wxbase.common.utils.ExcelUtil;
 import com.google.common.base.CaseFormat;
 
 import java.io.*;
@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class InsureGen {
 
-    private static final String fileName = "SpaymentPlanDetail";
-    private static final String packagePath = "taikangcx.domian.dto.manager.insure.info;";
+    private static final String fileName = "UnderwriteResData";
+    private static final String packagePath = "taikangcx.domian.dto.manager.underwrite;";
 
     /**
      * excel 格式为 参数名、注释、类型、备注说明
@@ -81,6 +81,8 @@ public class InsureGen {
             return "String";
         } else if ("Number".equals(genExcelModel.getType())) {
             return "Integer";
+        } else if ("Long".equals(genExcelModel.getType())) {
+            return "Long";
         } else if ("List".equals(genExcelModel.getType())) {
             return "List<" + initialToCapital(genExcelModel.getColumnName(), true) + ">";
         } else if ("Map".equals(genExcelModel.getType())) {

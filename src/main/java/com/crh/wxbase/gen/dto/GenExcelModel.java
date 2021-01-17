@@ -1,4 +1,4 @@
-package com.crh.wxbase.dto;
+package com.crh.wxbase.gen.dto;
 
 import com.alibaba.excel.annotation.ExcelProperty;
 import com.alibaba.excel.metadata.BaseRowModel;
