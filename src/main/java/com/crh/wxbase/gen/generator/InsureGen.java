@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class InsureGen {
 
-    private static final String fileName = "UnderwriteResData";
-    private static final String packagePath = "taikangcx.domian.dto.manager.underwrite;";
+    private static final String FILENAME = "UnderwriteResData";
+    private static final String PACKAGEPATH = "taikangcx.domian.dto.manager.underwrite;";
 
     /**
      * excel 格式为 参数名、注释、类型、备注说明
@@ -24,7 +24,7 @@ public class InsureGen {
      * @param args
      */
     public static void main(String[] args) throws Exception {
-        readLessThan1000Row(CommonConsts.GEN_WINDOW_PATH + "excel.xlsx", fileName);
+        readLessThan1000Row(CommonConsts.GEN_WINDOW_PATH + "excel.xlsx", FILENAME);
     }
 
     /**
@@ -116,7 +116,7 @@ public class InsureGen {
      * @throws IOException
      */
     private static void writeBaseEntityLine(BufferedWriter bufferedWriter, String sheetName) throws IOException {
-        writeLine(bufferedWriter, "package com.jfz.ins.insure.plugin." + packagePath);
+        writeLine(bufferedWriter, "package com.jfz.ins.insure.plugin." + PACKAGEPATH);
         bufferedWriter.newLine();
         writeLine(bufferedWriter, "import com.fasterxml.jackson.annotation.JsonProperty;");
         writeLine(bufferedWriter, "import lombok.Data;");
