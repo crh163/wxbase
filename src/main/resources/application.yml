@@ -4,7 +4,7 @@ server:
 #mysql
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/ins_test?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://47.115.22.141:3306/crh-gsc?characterEncoding=utf8&useSSL=false
     username: root
     password: chenrenhao
     driverClassName: com.mysql.jdbc.Driver

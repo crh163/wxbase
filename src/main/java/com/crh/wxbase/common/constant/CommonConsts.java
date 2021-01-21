@@ -25,6 +25,11 @@ public class CommonConsts {
     public static final SimpleDateFormat SDF_SECONDS = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     /**
+     * 匹配括弧及其里面的内容
+     */
+    public static final String BRACKET = "[(|（].*[)|）]";
+
+    /**
      * 代码生成目录
      */
     public static final String GEN_WINDOW_PATH = "D:\\Users\\rory.chen\\Desktop\\gen\\";

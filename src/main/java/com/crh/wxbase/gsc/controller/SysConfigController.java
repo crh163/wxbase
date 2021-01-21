@@ -17,7 +17,7 @@ public class SysConfigController {
 
     @ApiOperation("查询系统配置")
     @GetMapping(value = "/get")
-    public String get(){
+    public String get() {
         return "123";
     }
 

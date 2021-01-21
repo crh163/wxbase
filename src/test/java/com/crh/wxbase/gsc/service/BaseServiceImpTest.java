@@ -1,7 +1,8 @@
 package com.crh.wxbase.gsc.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.crh.wxbase.gsc.entity.SysConfig;
-import com.crh.wxbase.gsc.mapper.SysConfigMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class BaseServiceImpTest {
 
     @Autowired
-    private SysConfigMapper sysConfigMapper;
+    private SysConfigService sysConfigService;
 
     @Test
     public void test() {
-        SysConfig sysConfig = sysConfigMapper.selectById(2);
-        System.out.println(sysConfig.getPropName());
+        Page<SysConfig> page = new Page<>(1, 10);
+        QueryWrapper<SysConfig> queryWrapper = new QueryWrapper<>();
+        sysConfigService.page(page, queryWrapper);
+        System.out.println("总共条数："+page.getTotal());
     }
 }
