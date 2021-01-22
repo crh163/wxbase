@@ -34,4 +34,9 @@ public class CommonConsts {
      */
     public static final String GEN_WINDOW_PATH = "D:\\Users\\rory.chen\\Desktop\\gen\\";
 
+    /**
+     * ASC
+     */
+    public static final String ASC = "asc";
+
 }

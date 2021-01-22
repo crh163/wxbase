@@ -2,7 +2,8 @@ package com.crh.wxbase.gsc.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.crh.wxbase.gsc.entity.SysConfig;
+import com.crh.wxbase.system.entity.SysConfig;
+import com.crh.wxbase.system.service.SysConfigService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

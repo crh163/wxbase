@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @Configuration
-@MapperScan("com.crh.wxbase.gsc.mapper")
+@MapperScan("com.crh.wxbase.*.mapper")
 public class MybatisPlusConfig {
 
     @Bean

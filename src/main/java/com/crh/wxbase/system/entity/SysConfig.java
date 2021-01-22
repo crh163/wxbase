@@ -1,4 +1,4 @@
-package com.crh.wxbase.gsc.entity;
+package com.crh.wxbase.system.entity;
 
 import com.crh.wxbase.common.base.BaseModel;
 import lombok.Data;

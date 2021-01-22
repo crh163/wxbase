@@ -1,7 +1,7 @@
-package com.crh.wxbase.gsc.mapper;
+package com.crh.wxbase.system.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.crh.wxbase.gsc.entity.SysConfig;
+import com.crh.wxbase.system.entity.SysConfig;
 
 /**
  * @author rory.chen
