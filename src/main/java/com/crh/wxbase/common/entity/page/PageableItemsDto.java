@@ -5,8 +5,8 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @author jon.he
- * @date 2019-09-16 14:59
+ * @author rory.chen
+ * @date 2021-01-07 14:39
  */
 @Data
 public class PageableItemsDto<T> {

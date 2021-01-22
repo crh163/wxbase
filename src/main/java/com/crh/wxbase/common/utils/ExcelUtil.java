@@ -272,8 +272,8 @@ public class ExcelUtil {
      * 每解析一行会回调invoke()方法。
      * 整个excel解析结束会执行doAfterAllAnalysed()方法
      *
-     * @author: chenrenhao
-     * @date: 19-4-3 14:11
+     * @author rory.chen
+     * @date 2021-01-07 14:39
      */
     @Getter
     @Setter
