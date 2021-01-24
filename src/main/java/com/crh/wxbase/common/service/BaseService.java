@@ -1,23 +1,27 @@
 package com.crh.wxbase.common.service;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.crh.wxbase.common.base.BaseModel;
 import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageDto;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.constant.ColumnConsts;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
 
+import java.util.Date;
 import java.util.List;
 
 /**
  * @author rory.chen
  * @date 2021-01-22 14:39
  */
-public class BaseService<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> {
+public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends ServiceImpl<M, T> {
 
     /**
      * 分页查询
@@ -61,4 +65,17 @@ public class BaseService<M extends BaseMapper<T>, T> extends ServiceImpl<M, T> {
         return itemsDto;
     }
 
+    @Override
+    public boolean save(T entity) {
+        entity.setCreateId(null);
+        entity.setCreateDate(new Date());
+        return super.save(entity);
+    }
+
+    @Override
+    public boolean update(T entity, Wrapper<T> updateWrapper) {
+        entity.setUpdateId(null);
+        entity.setUpdateDate(new Date());
+        return super.update(entity, updateWrapper);
+    }
 }
