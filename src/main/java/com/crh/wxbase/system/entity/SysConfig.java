@@ -1,6 +1,6 @@
 package com.crh.wxbase.system.entity;
 
-import com.crh.wxbase.common.base.BaseModel;
+import com.crh.wxbase.common.entity.base.BaseModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;

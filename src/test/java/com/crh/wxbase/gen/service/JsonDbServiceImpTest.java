@@ -1,18 +1,15 @@
 package com.crh.wxbase.gen.service;
 
-import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.gen.dto.GenCiDto;
-import com.crh.wxbase.gsc.entity.GscAuthor;
-import com.crh.wxbase.gsc.entity.GscParagraphs;
-import com.crh.wxbase.gsc.entity.GscRhythmic;
-import com.crh.wxbase.gsc.entity.GscType;
-import com.crh.wxbase.gsc.mapper.GscAuthorMapper;
+import com.crh.wxbase.gsc.entity.db.GscAuthor;
+import com.crh.wxbase.gsc.entity.db.GscParagraphs;
+import com.crh.wxbase.gsc.entity.db.GscRhythmic;
+import com.crh.wxbase.gsc.entity.db.GscType;
 import com.crh.wxbase.gsc.service.GscAuthorService;
 import com.crh.wxbase.gsc.service.GscParagraphsService;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
 import com.crh.wxbase.gsc.service.GscTypeService;
-import com.crh.wxbase.system.service.SysConfigService;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -62,11 +59,11 @@ public class JsonDbServiceImpTest {
         String typeName = "全宋词";
         String typeRemark = "《全宋词》是中国近百年来最重要的古籍整理成果之一。宋词和唐诗均为中国古典诗的艺术高峰。" +
                 "清代所编《全唐诗》是家喻户晓籍，现又新编出《全宋词》，堪称中国文学的双璧。全书共五册，荟萃宋代三百年间的词作。";
-        insertGscType(typeName, typeRemark);
+        Long typeId = insertGscType(typeName, typeRemark);
         //新增作者数据
 //        insertAuthor(authorFile);
         //新增诗词数据
-        insertCiData(fileList);
+        insertCiData(fileList, typeId);
     }
 
 
@@ -76,7 +73,7 @@ public class JsonDbServiceImpTest {
      * @param typeName
      * @param typeRemark
      */
-    private void insertGscType(String typeName, String typeRemark) {
+    private Long insertGscType(String typeName, String typeRemark) {
         GscType dbType = gscTypeService.getOne(new QueryWrapper<GscType>().eq("name", typeName));
         if (Objects.isNull(dbType)) {
             GscType type = new GscType();
@@ -84,8 +81,10 @@ public class JsonDbServiceImpTest {
             type.setRemark(typeRemark);
             gscTypeService.save(type);
             System.out.println("新增type【" + typeName + "】数据成功！");
+            return type.getId();
         } else {
             System.out.println("已存在type为【" + typeName + "】数据，无需新增！");
+            return dbType.getId();
         }
     }
 
@@ -94,8 +93,9 @@ public class JsonDbServiceImpTest {
      * 新增诗词数据
      *
      * @param fileList
+     * @param typeId
      */
-    private void insertCiData(List<File> fileList) throws IOException {
+    private void insertCiData(List<File> fileList, Long typeId) throws IOException {
         if (CollectionUtils.isEmpty(fileList)) {
             System.out.println("无诗词json文件！");
             return;
@@ -125,6 +125,7 @@ public class JsonDbServiceImpTest {
                 }
                 GscRhythmic gscRhythmic = new GscRhythmic();
                 gscRhythmic.setAuthorId(gscAuthor.getId());
+                gscRhythmic.setTypeId(typeId);
                 gscRhythmic.setRhythmic(genCi.getRhythmic());
                 gscRhythmicService.save(gscRhythmic);
                 for (int j = 0; j < genCi.getParagraphs().size(); j++) {

@@ -1,7 +1,7 @@
 package com.crh.wxbase.gsc.service;
 
 import com.crh.wxbase.common.service.BaseService;
-import com.crh.wxbase.gsc.entity.GscAuthor;
+import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.mapper.GscAuthorMapper;
 import org.springframework.stereotype.Service;
 

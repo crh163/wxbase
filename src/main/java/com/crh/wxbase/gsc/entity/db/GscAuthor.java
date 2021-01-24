@@ -1,6 +1,6 @@
-package com.crh.wxbase.gsc.entity;
+package com.crh.wxbase.gsc.entity.db;
 
-import com.crh.wxbase.common.base.BaseModel;
+import com.crh.wxbase.common.entity.base.BaseModel;
 import lombok.Data;
 
 /**

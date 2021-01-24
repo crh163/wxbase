@@ -1,4 +1,4 @@
-package com.crh.wxbase.common.base;
+package com.crh.wxbase.common.entity.base;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

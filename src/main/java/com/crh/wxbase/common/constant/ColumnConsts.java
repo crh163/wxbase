@@ -8,4 +8,6 @@ public class ColumnConsts {
 
     public static final String ID = "id";
 
+    public static final String RHYTHMIC_ID = "rhythmic_id";
+
 }

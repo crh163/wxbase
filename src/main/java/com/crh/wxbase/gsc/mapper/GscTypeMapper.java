@@ -1,7 +1,7 @@
 package com.crh.wxbase.gsc.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.crh.wxbase.gsc.entity.GscType;
+import com.crh.wxbase.gsc.entity.db.GscType;
 
 /**
  * @author rory.chen
