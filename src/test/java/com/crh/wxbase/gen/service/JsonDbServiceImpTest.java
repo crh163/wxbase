@@ -54,7 +54,7 @@ public class JsonDbServiceImpTest {
     public void test() throws IOException {
         List<File> fileList = new ArrayList<>();
         File authorFile = new File(FILEPATH + "\\" + AUTHORFILE);
-        getAllFile(FILEPATH, fileList);
+//        getAllFile(FILEPATH, fileList);
         //新增类型
         String typeName = "全宋词";
         String typeRemark = "《全宋词》是中国近百年来最重要的古籍整理成果之一。宋词和唐诗均为中国古典诗的艺术高峰。" +
@@ -120,7 +120,7 @@ public class JsonDbServiceImpTest {
                 GscAuthor gscAuthor = collect.get(genCi.getAuthor());
                 //未查询到作者直接跳过
                 if (Objects.isNull(gscAuthor)) {
-                    System.out.println("未查询到作者："+genCi.getAuthor()+"，不保存数据！");
+                    System.out.println("未查询到作者：" + genCi.getAuthor() + "，不保存数据！");
                     continue;
                 }
                 GscRhythmic gscRhythmic = new GscRhythmic();

@@ -99,11 +99,11 @@ public class InsureGen {
      * @return 转换结果
      */
     public static String initialToCapital(String columnName, Boolean firstUpper) {
-        if(columnName.contains("_")){
+        if (columnName.contains("_")) {
             columnName = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, columnName);
         }
-        if(firstUpper){
-            columnName = columnName.substring(0,1).toUpperCase()+columnName.substring(1);
+        if (firstUpper) {
+            columnName = columnName.substring(0, 1).toUpperCase() + columnName.substring(1);
         }
         return columnName;
     }

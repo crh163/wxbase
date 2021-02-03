@@ -27,6 +27,6 @@ public class BaseServiceImpTest {
         Page<SysConfig> page = new Page<>(1, 10);
         QueryWrapper<SysConfig> queryWrapper = new QueryWrapper<>();
         sysConfigService.page(page, queryWrapper);
-        System.out.println("总共条数："+page.getTotal());
+        System.out.println("总共条数：" + page.getTotal());
     }
 }

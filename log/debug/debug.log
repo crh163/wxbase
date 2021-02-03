@@ -1,0 +1,16 @@
+2021-02-03 14:46:01,308 INFO [main] c.crh.wxbase.WxbaseApplicationTests [StartupInfoLogger.java : 55] Starting WxbaseApplicationTests on SK-EJRHNUNDSCSI with PID 35744 (started by rory.chen in E:\github\wxbase)
+2021-02-03 14:46:01,310 INFO [main] c.crh.wxbase.WxbaseApplicationTests [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-02-03 14:46:08,247 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-03 14:46:09,036 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-03 14:46:10,214 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-02-03 14:46:10,277 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-02-03 14:46:10,351 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-02-03 14:46:10,719 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-02-03 14:46:10,737 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-02-03 14:46:10,745 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_3
+2021-02-03 14:46:10,861 INFO [main] c.crh.wxbase.WxbaseApplicationTests [StartupInfoLogger.java : 61] Started WxbaseApplicationTests in 10.297 seconds (JVM running for 12.541)
+2021-02-03 14:46:11,822 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-02-03 14:46:13,043 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-02-03 14:46:13,468 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-03 14:46:13,473 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-02-03 14:46:13,548 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.

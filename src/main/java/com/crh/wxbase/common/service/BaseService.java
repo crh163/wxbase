@@ -27,7 +27,7 @@ public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends S
      *
      * @param queryModel
      */
-    public PageableItemsDto selectListByPage(QueryModel queryModel){
+    public PageableItemsDto selectListByPage(QueryModel queryModel) {
         PageableItemsDto<T> itemsDto = new PageableItemsDto<>();
         //是否查询指定id数据
         if (CollectionUtils.isNotEmpty(queryModel.getIds())) {
