@@ -10,4 +10,6 @@ public class ColumnConsts {
 
     public static final String RHYTHMIC_ID = "rhythmic_id";
 
+    public static final String USERNAME = "username";
+
 }
