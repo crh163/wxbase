@@ -10,7 +10,8 @@ public enum ResponseCodeEnum {
     FAIL(500, "请求异常"),
     FAIL_LOGIN_NULL_USERNAMEORPASSWORD(5001, "登录失败，用户名或密码为空！"),
     FAIL_LOGIN_NULL_DB_USERNAME(5002, "登录失败，不存在该用户名！"),
-    FAIL_LOGIN_ERROR_PASSWORD(5003, "登录失败，密码错误！");
+    FAIL_LOGIN_ERROR_PASSWORD(5003, "登录失败，密码错误！"),
+    FAIL_USER_DELETE_ADMIN(5004, "不能删除admin用户！");
 
     private Integer code;
 

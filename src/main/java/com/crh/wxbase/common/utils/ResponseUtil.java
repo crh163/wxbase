@@ -50,11 +50,30 @@ public class ResponseUtil {
     }
 
     /**
+     * 失败
+     *
+     * @return
+     */
+    public static Response getFail(String failMsg) {
+        return new Response(ResponseCodeEnum.FAIL.getCode(), failMsg);
+    }
+
+    /**
      * 根据枚举动态
      *
      * @return
      */
     public static Response getFail(ResponseCodeEnum codeEnum) {
+        return new Response(codeEnum.getCode(), codeEnum.getMsg());
+    }
+
+    /**
+     * 根据布尔值
+     *
+     * @return
+     */
+    public static Response getResult(Boolean bool) {
+        ResponseCodeEnum codeEnum = bool ? ResponseCodeEnum.SUCCESS : ResponseCodeEnum.FAIL;
         return new Response(codeEnum.getCode(), codeEnum.getMsg());
     }
 

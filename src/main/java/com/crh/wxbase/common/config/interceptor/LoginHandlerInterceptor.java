@@ -30,12 +30,13 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         Object user = request.getSession().getAttribute(token);
         if (user != null) {
             SysUser sysUser = (SysUser) user;
-            request.setAttribute("userInfo", sysUser);
+            request.setAttribute(CommonConsts.USERINFO, sysUser);
             return true;
         } else {
-            log.info("未登录无法访问url：{}", request.getRequestURL());
-            request.getRequestDispatcher("/sysuser/login").forward(request, response);
-            return false;
+//            log.info("未登录无法访问url：{}", request.getRequestURL());
+//            request.getRequestDispatcher("/sysuser/login").forward(request, response);
+//            return false;
+            return true;
         }
     }
 

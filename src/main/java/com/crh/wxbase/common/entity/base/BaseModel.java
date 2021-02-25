@@ -1,5 +1,7 @@
 package com.crh.wxbase.common.entity.base;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -21,21 +23,29 @@ public class BaseModel {
     /**
      * 创建人id
      */
-    private Integer createId;
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
+    private Long createId;
 
     /**
      * 创建时间
      */
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
     private Date createDate;
 
     /**
      * 最近修改人id
      */
-    private Integer updateId;
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
+    private Long updateId;
 
     /**
      * 最近修改时间
      */
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
     private Date updateDate;
 
 }

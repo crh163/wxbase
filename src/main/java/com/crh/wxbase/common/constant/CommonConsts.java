@@ -44,4 +44,9 @@ public class CommonConsts {
      */
     public static final String X_ACCESS_TOKEN = "x-access-token";
 
+    /**
+     *
+     */
+    public static final String USERINFO = "userInfo";
+
 }

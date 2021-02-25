@@ -5,14 +5,18 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.entity.base.BaseModel;
 import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageDto;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.constant.ColumnConsts;
+import com.crh.wxbase.system.entity.SysUser;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 
@@ -21,6 +25,9 @@ import java.util.List;
  * @date 2021-01-22 14:39
  */
 public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends ServiceImpl<M, T> {
+
+    @Autowired
+    private HttpServletRequest request;
 
     /**
      * 分页查询
@@ -66,15 +73,32 @@ public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends S
 
     @Override
     public boolean save(T entity) {
-        entity.setCreateId(null);
+        SysUser sysUser = (SysUser) request.getSession().getAttribute(CommonConsts.USERINFO);
+        if (sysUser != null) {
+            entity.setCreateId(sysUser.getId());
+        }
         entity.setCreateDate(new Date());
         return super.save(entity);
     }
 
     @Override
     public boolean update(T entity, Wrapper<T> updateWrapper) {
-        entity.setUpdateId(null);
+        SysUser sysUser = (SysUser) request.getSession().getAttribute(CommonConsts.USERINFO);
+        if (sysUser != null) {
+            entity.setUpdateId(sysUser.getId());
+        }
         entity.setUpdateDate(new Date());
         return super.update(entity, updateWrapper);
     }
+
+    @Override
+    public boolean updateById(T entity) {
+        SysUser sysUser = (SysUser) request.getSession().getAttribute(CommonConsts.USERINFO);
+        if (sysUser != null) {
+            entity.setUpdateId(sysUser.getId());
+        }
+        entity.setUpdateDate(new Date());
+        return super.updateById(entity);
+    }
+
 }

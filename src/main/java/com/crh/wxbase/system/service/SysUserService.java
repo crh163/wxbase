@@ -44,7 +44,7 @@ public class SysUserService extends BaseService<SysUserMapper, SysUser> {
         }
         //对明文密码进行加密比较
         String passwordEncryAes = ArithmeticUtil.encryptAes(loginDto.getPassword(), EncryptConsts.AES_KEY);
-        if(!loginDto.getPassword().equals(passwordEncryAes)){
+        if(!sysUser.getPassword().equals(passwordEncryAes)){
             return ResponseUtil.getFail(ResponseCodeEnum.FAIL_LOGIN_ERROR_PASSWORD);
         }
         log.info("用户名：{} 登录成功！", loginDto.getUsername());
