@@ -86,12 +86,18 @@ public class AllDbServiceImpTest {
                     continue;
                 }
 
-                GscAuthor gscAuthor = new GscAuthor();
-                gscAuthor.setCreateId((long) 1);
-                gscAuthor.setCreateDate(new Date());
-                gscAuthor.setName(csvReader.get(headArray[2]));
-                gscAuthor.setDynastyId(dynastyId);
-                gscAuthorService.save(gscAuthor);
+                QueryWrapper<GscAuthor> wrapper = new QueryWrapper<>();
+                wrapper.eq("name", csvReader.get(headArray[2]))
+                        .eq("dynastyId", dynastyId);
+                GscAuthor gscAuthor = gscAuthorService.getOne(wrapper);
+                if(gscAuthor == null){
+                    gscAuthor = new GscAuthor();
+                    gscAuthor.setCreateId((long) 1);
+                    gscAuthor.setCreateDate(new Date());
+                    gscAuthor.setName(csvReader.get(headArray[2]));
+                    gscAuthor.setDynastyId(dynastyId);
+                    gscAuthorService.save(gscAuthor);
+                }
 
                 GscRhythmic gscRhythmic = new GscRhythmic();
                 gscRhythmic.setCreateId((long) 1);

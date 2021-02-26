@@ -551,3 +551,27 @@ Caused by: java.lang.IllegalStateException: executor not accepting a task
 2021-02-26 18:36:41,595 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
 2021-02-26 18:36:42,155 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
 2021-02-26 18:37:19,379 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s225ms43µs900ns).
+2021-02-26 18:41:45,701 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-02-26 18:41:45,724 INFO [main] c.c.w.g.service.AllDbServiceImpTest [StartupInfoLogger.java : 55] Starting AllDbServiceImpTest on SK-EJRHNUNDSCSI with PID 22308 (started by rory.chen in E:\github\wxbase)
+2021-02-26 18:41:45,726 INFO [main] c.c.w.g.service.AllDbServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-02-26 18:41:48,729 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-02-26 18:41:48,734 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-02-26 18:41:48,821 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 64ms. Found 0 Redis repository interfaces.
+2021-02-26 18:41:55,602 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-26 18:42:00,665 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-26 18:42:03,006 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-02-26 18:42:03,085 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-02-26 18:42:03,173 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-02-26 18:42:03,647 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-02-26 18:42:03,656 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-02-26 18:42:03,727 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_3
+2021-02-26 18:42:03,742 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-02-26 18:42:03,753 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-02-26 18:42:03,771 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-02-26 18:42:03,775 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_4
+2021-02-26 18:42:03,785 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-02-26 18:42:04,459 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-02-26 18:42:04,491 INFO [main] c.c.w.g.service.AllDbServiceImpTest [StartupInfoLogger.java : 61] Started AllDbServiceImpTest in 20.053 seconds (JVM running for 23.721)
+2021-02-26 18:42:05,167 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-02-26 18:42:05,726 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-02-26 18:44:08,165 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
