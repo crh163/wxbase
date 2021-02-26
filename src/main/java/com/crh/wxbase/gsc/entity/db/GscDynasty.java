@@ -8,7 +8,7 @@ import lombok.Data;
  * @date 2021-01-22 16:46
  */
 @Data
-public class GscType extends BaseModel {
+public class GscDynasty extends BaseModel {
 
     private String name;
 

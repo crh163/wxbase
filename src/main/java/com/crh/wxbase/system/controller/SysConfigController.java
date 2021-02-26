@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -65,4 +66,19 @@ public class SysConfigController {
         return ResponseUtil.getSuccess();
     }
 
+    public static void main(String[] args) {
+        String text = "q,b。c,e。f,h";
+        List<String> ss = new ArrayList<>();
+        String[] split = text.split("。");
+        for(String s : split){
+            String[] split1 = (s+"。").split("，");
+            for(String s1 : split1){
+                if(!s1.endsWith("。")){
+                    s1 = s1+"，";
+                }
+                ss.add(s1);
+            }
+        }
+        System.out.println(ss);
+    }
 }

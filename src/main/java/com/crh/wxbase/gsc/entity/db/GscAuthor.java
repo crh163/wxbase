@@ -14,6 +14,6 @@ public class GscAuthor extends BaseModel {
 
     private String description;
 
-    private String shortDescription;
+    private Long dynastyId;
 
 }

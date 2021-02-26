@@ -3,7 +3,6 @@ package com.crh.wxbase.gsc.controller;
 import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.gsc.service.GscAuthorService;
-import com.crh.wxbase.gsc.service.GscTypeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

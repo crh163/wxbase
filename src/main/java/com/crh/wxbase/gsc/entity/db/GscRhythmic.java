@@ -12,8 +12,10 @@ public class GscRhythmic extends BaseModel {
 
     private Long authorId;
 
-    private Long typeId;
+    private Long dynastyId;
 
     private String rhythmic;
+
+    private Integer rowNumber;
 
 }

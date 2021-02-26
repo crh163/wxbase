@@ -5,14 +5,13 @@ import com.crh.wxbase.gen.dto.GenCiDto;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
-import com.crh.wxbase.gsc.entity.db.GscType;
+import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.service.GscAuthorService;
 import com.crh.wxbase.gsc.service.GscParagraphsService;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
-import com.crh.wxbase.gsc.service.GscTypeService;
-import com.google.gson.FieldNamingPolicy;
+import com.crh.wxbase.gsc.service.GscDynastyService;
+import com.csvreader.CsvReader;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
@@ -24,6 +23,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -43,138 +43,99 @@ public class AllDbServiceImpTest {
     @Autowired
     private GscRhythmicService gscRhythmicService;
     @Autowired
-    private GscTypeService gscTypeService;
+    private GscDynastyService gscDynastyService;
 
     //文件夹路径
     private static final String FILEPATH = "E:\\github\\poetry\\Poetry";
-    //作者文件名
-    private static final String AUTHORFILE = "author.song.json";
 
     @Test
     public void test() throws IOException {
         List<File> fileList = new ArrayList<>();
-        File authorFile = new File(FILEPATH + "\\" + AUTHORFILE);
-//        getAllFile(FILEPATH, fileList);
-        //新增类型
-        String typeName = "全宋词";
-        String typeRemark = "《全宋词》是中国近百年来最重要的古籍整理成果之一。宋词和唐诗均为中国古典诗的艺术高峰。" +
-                "清代所编《全唐诗》是家喻户晓籍，现又新编出《全宋词》，堪称中国文学的双璧。全书共五册，荟萃宋代三百年间的词作。";
-        Long typeId = insertGscType(typeName, typeRemark);
-        //新增作者数据
-//        insertAuthor(authorFile);
-        //新增诗词数据
-        insertCiData(fileList, typeId);
+        getAllFile(FILEPATH, fileList);
+//        insertDynasty(fileList);
+        insertCiData(fileList);
     }
-
-
-    /**
-     * 新增类型
-     *
-     * @param typeName
-     * @param typeRemark
-     */
-    private Long insertGscType(String typeName, String typeRemark) {
-        GscType dbType = gscTypeService.getOne(new QueryWrapper<GscType>().eq("name", typeName));
-        if (Objects.isNull(dbType)) {
-            GscType type = new GscType();
-            type.setName(typeName);
-            type.setRemark(typeRemark);
-            gscTypeService.save(type);
-            System.out.println("新增type【" + typeName + "】数据成功！");
-            return type.getId();
-        } else {
-            System.out.println("已存在type为【" + typeName + "】数据，无需新增！");
-            return dbType.getId();
-        }
-    }
-
 
     /**
      * 新增诗词数据
      *
      * @param fileList
-     * @param typeId
      */
-    private void insertCiData(List<File> fileList, Long typeId) throws IOException {
+    private void insertCiData(List<File> fileList) throws IOException {
         if (CollectionUtils.isEmpty(fileList)) {
-            System.out.println("无诗词json文件！");
+            System.out.println("无诗词csv文件！");
             return;
         }
+        Map<String, Long> dynastyMap = gscDynastyService.list().stream()
+                .collect(Collectors.toMap(GscDynasty::getName, GscDynasty::getId));
         for (int i = 0; i < fileList.size(); i++) {
             File file = fileList.get(i);
-            //读取json文件内容
-            String jsonText = FileUtils.readFileToString(file, "UTF-8");
-            //转移成诗词对象
-            List<GenCiDto> rhyList = new Gson().fromJson(jsonText,
-                    new TypeToken<List<GenCiDto>>() {
-                    }.getType());
-            System.out.println("开始保存第" + (i + 1) + "个文件，总共" + rhyList.size() + "条数据");
+            CsvReader csvReader = new CsvReader(file.getAbsolutePath(), ',', Charset.forName("UTF-8"));
+            csvReader.readHeaders();
+            String[] headArray = csvReader.getHeaders();
+            System.out.println("开始保存第" + (i + 1) + "个文件，文件名: " + file.getName());
 
-            List<String> names = rhyList.stream().map(GenCiDto::getAuthor).collect(Collectors.toList());
-            List<GscAuthor> authors = gscAuthorService.list(
-                    new QueryWrapper<GscAuthor>().in("name", names));
-            Map<String, GscAuthor> collect = authors.stream().collect(Collectors.toMap(GscAuthor::getName, User -> User));
+            int number = 0;
             List<GscParagraphs> gscParagraphsList = new ArrayList<>();
-            System.out.println("开始保存标题");
-            for (GenCiDto genCi : rhyList) {
-                GscAuthor gscAuthor = collect.get(genCi.getAuthor());
-                //未查询到作者直接跳过
-                if (Objects.isNull(gscAuthor)) {
-                    System.out.println("未查询到作者：" + genCi.getAuthor() + "，不保存数据！");
+            while (csvReader.readRecord()) {
+                List<String> texts = getParags(csvReader.get(headArray[3]));
+                Long dynastyId = dynastyMap.get(csvReader.get(headArray[1]));
+                number++;
+                if (dynastyId == null) {
+                    System.out.println("未查询到朝代信息：" + csvReader.get(headArray[1])+"，作者：" + csvReader.get(headArray[2]));
                     continue;
                 }
+
+                GscAuthor gscAuthor = new GscAuthor();
+                gscAuthor.setCreateId((long) 1);
+                gscAuthor.setCreateDate(new Date());
+                gscAuthor.setName(csvReader.get(headArray[2]));
+                gscAuthor.setDynastyId(dynastyId);
+                gscAuthorService.save(gscAuthor);
+
                 GscRhythmic gscRhythmic = new GscRhythmic();
+                gscRhythmic.setCreateId((long) 1);
+                gscRhythmic.setCreateDate(new Date());
+                gscRhythmic.setDynastyId(dynastyId);
                 gscRhythmic.setAuthorId(gscAuthor.getId());
-                gscRhythmic.setTypeId(typeId);
-                gscRhythmic.setRhythmic(genCi.getRhythmic());
+                gscRhythmic.setRhythmic(csvReader.get(headArray[0]));
+                gscRhythmic.setRowNumber(texts.size());
                 gscRhythmicService.save(gscRhythmic);
-                for (int j = 0; j < genCi.getParagraphs().size(); j++) {
-                    GscParagraphs gscParagraphs = new GscParagraphs();
-                    gscParagraphs.setRhythmicId(gscRhythmic.getId());
-                    gscParagraphs.setText(genCi.getParagraphs().get(j));
-                    gscParagraphs.setParOrder(j + 1);
-                    gscParagraphs.setCreateDate(new Date());
-                    gscParagraphsList.add(gscParagraphs);
+
+                int n = 1;
+                for (String text : texts) {
+                    GscParagraphs paragraphs = new GscParagraphs();
+                    paragraphs.setCreateId((long) 1);
+                    paragraphs.setCreateDate(new Date());
+                    paragraphs.setRhythmicId(gscRhythmic.getId());
+                    paragraphs.setText(text);
+                    paragraphs.setParOrder(n);
+                    gscParagraphsList.add(paragraphs);
+                    n++;
                 }
+
             }
-            System.out.println("开始批量保存");
+            System.out.println("开始批量保存诗词内容");
             gscParagraphsService.saveBatch(gscParagraphsList);
-            System.out.println("第" + (i + 1) + "个文件的诗词json数据新增完毕！");
+            System.out.println("第" + (i + 1) + "个文件的诗词csv数据新增完毕！共总 " + number + " 首诗词");
         }
-        System.out.println("所有诗词json数据新增完毕！");
+        System.out.println("所有诗词csv数据新增完毕！");
     }
 
 
-    /**
-     * 新增作者数据
-     *
-     * @param authorFile
-     */
-    private void insertAuthor(File authorFile) throws IOException {
-        if (Objects.isNull(authorFile)) {
-            System.out.println("无作者json文件！");
-            return;
-        }
-        //读取json文件内容
-        String jsonText = FileUtils.readFileToString(authorFile, "UTF-8");
-        //转移成作者对象
-        Gson gson = new GsonBuilder()
-                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
-                .create();
-        List<GscAuthor> authors = gson.fromJson(jsonText,
-                new TypeToken<List<GscAuthor>>() {
-                }.getType());
-        List<GscAuthor> addAuthors = new ArrayList<>();
-        Set<String> authNames = new HashSet<>();
-        for (GscAuthor author : authors) {
-            if (author.getName().length() > 1 && !authNames.contains(author.getName())) {
-                author.setCreateDate(new Date());
-                addAuthors.add(author);
-                authNames.add(author.getName());
+    private List<String> getParags(String text) {
+        List<String> ss = new ArrayList<>();
+        String[] split = text.split("。");
+        for (String s : split) {
+            String[] split1 = (s + "。").split("，");
+            for (String s1 : split1) {
+                if (!s1.endsWith("。")) {
+                    s1 = s1 + "，";
+                }
+                ss.add(s1);
             }
         }
-        gscAuthorService.saveBatch(addAuthors);
-        System.out.println("作者json数据新增成功！个数为" + addAuthors.size());
+        return ss;
     }
 
 
@@ -188,15 +149,39 @@ public class AllDbServiceImpTest {
         File file = new File(path);
         File[] tempList = file.listFiles();
         for (int i = 0; i < tempList.length; i++) {
-            //判断如果是.json结尾的文件  存入集合
-            if (tempList[i].isFile() && tempList[i].getName().endsWith(".json")
-                    && !tempList[i].getName().endsWith(AUTHORFILE)) {
+            //判断如果是.csv结尾的文件  存入集合
+            if (tempList[i].isFile() && tempList[i].getName().endsWith(".csv")) {
                 fileList.add(tempList[i]);
             }
             //如果是文件夹  递归调用
             if (tempList[i].isDirectory()) {
                 getAllFile(tempList[i].getAbsolutePath(), fileList);
             }
+        }
+    }
+
+    private void insertDynasty(List<File> fileList) {
+        if (CollectionUtils.isEmpty(fileList)) {
+            System.out.println("无诗词csv文件！");
+            return;
+        }
+        Set<String> dyns = new HashSet<>();
+        for (int i = 0; i < fileList.size(); i++) {
+            File file = fileList.get(i);
+            String name = file.getName().replace(".csv", "");
+            if (name.contains("xxxxx")) {
+                name = name.substring(0, name.indexOf("xxxxx"));
+            }
+            if (name.endsWith("朝") && !"南北朝".equals(name)) {
+                name = name.substring(0, name.length() - 1);
+            }
+            dyns.add(name);
+        }
+        for (String dyn : dyns) {
+            GscDynasty dynasty = new GscDynasty();
+            dynasty.setName(dyn);
+            dynasty.setCreateId((long) 1);
+            gscDynastyService.save(dynasty);
         }
     }
 

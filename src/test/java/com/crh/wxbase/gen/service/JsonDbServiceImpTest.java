@@ -5,11 +5,11 @@ import com.crh.wxbase.gen.dto.GenCiDto;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
-import com.crh.wxbase.gsc.entity.db.GscType;
+import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.service.GscAuthorService;
 import com.crh.wxbase.gsc.service.GscParagraphsService;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
-import com.crh.wxbase.gsc.service.GscTypeService;
+import com.crh.wxbase.gsc.service.GscDynastyService;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -43,7 +43,7 @@ public class JsonDbServiceImpTest {
     @Autowired
     private GscRhythmicService gscRhythmicService;
     @Autowired
-    private GscTypeService gscTypeService;
+    private GscDynastyService gscDynastyService;
 
     //文件夹路径
     private static final String FILEPATH = "E:\\gsc\\chinese-poetry-master\\ci";
@@ -74,12 +74,12 @@ public class JsonDbServiceImpTest {
      * @param typeRemark
      */
     private Long insertGscType(String typeName, String typeRemark) {
-        GscType dbType = gscTypeService.getOne(new QueryWrapper<GscType>().eq("name", typeName));
+        GscDynasty dbType = gscDynastyService.getOne(new QueryWrapper<GscDynasty>().eq("name", typeName));
         if (Objects.isNull(dbType)) {
-            GscType type = new GscType();
+            GscDynasty type = new GscDynasty();
             type.setName(typeName);
             type.setRemark(typeRemark);
-            gscTypeService.save(type);
+            gscDynastyService.save(type);
             System.out.println("新增type【" + typeName + "】数据成功！");
             return type.getId();
         } else {
@@ -125,7 +125,7 @@ public class JsonDbServiceImpTest {
                 }
                 GscRhythmic gscRhythmic = new GscRhythmic();
                 gscRhythmic.setAuthorId(gscAuthor.getId());
-                gscRhythmic.setTypeId(typeId);
+//                gscRhythmic.setTypeId(typeId);
                 gscRhythmic.setRhythmic(genCi.getRhythmic());
                 gscRhythmicService.save(gscRhythmic);
                 for (int j = 0; j < genCi.getParagraphs().size(); j++) {

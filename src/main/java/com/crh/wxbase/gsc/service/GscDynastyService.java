@@ -1,8 +1,8 @@
 package com.crh.wxbase.gsc.service;
 
 import com.crh.wxbase.common.service.BaseService;
-import com.crh.wxbase.gsc.entity.db.GscType;
-import com.crh.wxbase.gsc.mapper.GscTypeMapper;
+import com.crh.wxbase.gsc.entity.db.GscDynasty;
+import com.crh.wxbase.gsc.mapper.GscDynastyMapper;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,6 +10,6 @@ import org.springframework.stereotype.Service;
  * @date 2021-01-21 18:06
  */
 @Service
-public class GscTypeService extends BaseService<GscTypeMapper, GscType> {
+public class GscDynastyService extends BaseService<GscDynastyMapper, GscDynasty> {
 
 }
