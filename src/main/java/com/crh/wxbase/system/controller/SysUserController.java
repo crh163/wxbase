@@ -1,5 +1,6 @@
 package com.crh.wxbase.system.controller;
 
+import com.crh.wxbase.common.config.exception.WxbaseException;
 import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.constant.EncryptConsts;
 import com.crh.wxbase.common.constant.ResponseCodeEnum;
@@ -8,6 +9,7 @@ import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ArithmeticUtil;
+import com.crh.wxbase.common.utils.CollectionUtil;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.system.entity.SysUser;
 import com.crh.wxbase.system.entity.dto.LoginDto;
@@ -23,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * @author rory.chen
@@ -56,30 +59,37 @@ public class SysUserController {
 
     @ApiOperation("管理后台用户修改")
     @PostMapping("/update")
-    public Response update(SysUser sysUser){
-        //用户名和密码不能修改
-        sysUser.setUsername(null);
+    public Response update(SysUser sysUser) throws WxbaseException {
+        if(Objects.isNull(sysUser.getId())){
+            throw new WxbaseException(ResponseCodeEnum.FAIL_ALL_UPDATE_NULL_ID);
+        }
         return ResponseUtil.getResult(sysUserService.updateById(sysUser));
     }
 
     @ApiOperation("管理后台用户删除")
     @PostMapping("/deleteByIds")
-    public Response deleteByIds(List<Long> ids){
-        for(Long id : ids){
+    public Response deleteByIds(String ids) throws WxbaseException {
+        List<Long> idList = CollectionUtil.converIdsToList(ids);
+        for(Long id : idList){
             SysUser user = sysUserService.getById(id);
+            if(Objects.isNull(user)){
+                throw new WxbaseException(ResponseCodeEnum.FAIL_ALL_DELETE_PORTION_NULL_ID);
+            }
             if(UserLevelConsts.LEVEL_ADMIN_USER.equals(user.getUsername())){
-                return ResponseUtil.getFail(ResponseCodeEnum.FAIL_USER_DELETE_ADMIN);
+                throw new WxbaseException(ResponseCodeEnum.FAIL_USER_DELETE_ADMIN);
             }
         }
-        sysUserService.removeByIds(ids);
+        sysUserService.removeByIds(idList);
         return ResponseUtil.getSuccess();
     }
+
 
     @ApiOperation("管理后台登录")
     @PostMapping("/login")
     public Response login(LoginDto loginDto){
         return sysUserService.login(loginDto, request);
     }
+
 
     @ApiOperation("管理后台登出")
     @PostMapping("/loginout")

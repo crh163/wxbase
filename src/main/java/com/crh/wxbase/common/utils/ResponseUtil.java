@@ -77,4 +77,13 @@ public class ResponseUtil {
         return new Response(codeEnum.getCode(), codeEnum.getMsg());
     }
 
+    /**
+     * 自行封装
+     *
+     * @return
+     */
+    public static Response getResult(Integer code, String msg) {
+        return new Response(code, msg);
+    }
+
 }

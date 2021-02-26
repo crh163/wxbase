@@ -27,4 +27,15 @@ public class VaildExceptionHandler {
         return ResponseUtil.getFail(defaultMessage);
     }
 
+    /**
+     * 自定义异常处理
+     *
+     * @param e
+     * @return
+     */
+    @ExceptionHandler(WxbaseException.class)
+    public Response handleWxbaseException(WxbaseException e) {
+        return ResponseUtil.getResult(e.getErrorCode(), e.getErrorMsg());
+    }
+
 }

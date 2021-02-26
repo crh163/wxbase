@@ -43,6 +43,7 @@
         <!-- 文件输出的日志 的格式 -->
         <encoder>
             <pattern>%date %level [%thread] %logger{36} [%file : %line] %msg%n</pattern>
+            <charset>UTF-8</charset>
         </encoder>
         <prudent>false</prudent>
     </appender>
