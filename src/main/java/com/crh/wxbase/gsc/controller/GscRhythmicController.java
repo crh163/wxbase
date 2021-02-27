@@ -3,6 +3,8 @@ package com.crh.wxbase.gsc.controller;
 import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
+import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,7 +35,8 @@ public class GscRhythmicController {
     @ApiOperation("查询诗词详情数据")
     @PostMapping("queryInfoById")
     public Response queryInfoById(Long rhythmicId) {
-        return gscRhythmicService.queryInfoById(rhythmicId);
+        RhythmicInfoDto rhythmicInfoDto = gscRhythmicService.buildCompleteRhythmicById(rhythmicId);
+        return ResponseUtil.getSuccess(rhythmicInfoDto);
     }
 
 }

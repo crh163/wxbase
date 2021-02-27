@@ -5,6 +5,7 @@ import com.crh.wxbase.common.constant.ColumnConsts;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.gsc.constant.DynastyConstant;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
@@ -28,14 +29,28 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
     @Autowired
     private GscAuthorService gscAuthorService;
 
+    @Autowired
+    private GscRhythmicMapper gscRhythmicMapper;
+
     /**
-     * 查询诗词详情数据
+     * 封装诗词详情数据
      *
      * @param rhythmicId
      * @return
      */
-    public Response queryInfoById(Long rhythmicId) {
+    public RhythmicInfoDto buildCompleteRhythmicById(Long rhythmicId){
         GscRhythmic rhythmic = getById(rhythmicId);
+        return buildCompleteRhythmicById(rhythmic);
+    }
+
+
+    /**
+     * 封装诗词详情数据
+     *
+     * @param rhythmic
+     * @return
+     */
+    public RhythmicInfoDto buildCompleteRhythmicById(GscRhythmic rhythmic){
         //作者
         GscAuthor author = gscAuthorService.getById(rhythmic.getAuthorId());
         //诗词内容
@@ -47,7 +62,21 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
         rhythmicInfoDto.setRhythmic(rhythmic.getRhythmic());
         rhythmicInfoDto.setAuthor(author);
         rhythmicInfoDto.setParagraphsList(paragraphsList);
-        return ResponseUtil.getSuccess(rhythmicInfoDto);
+        return rhythmicInfoDto;
+    }
+
+
+    /**
+     * 随机获取db 4言唐诗
+     *
+     * @return
+     */
+    public RhythmicInfoDto queryTodayRandomRhythmic() {
+        Integer randomNum = gscRhythmicMapper.queryTodayRandomNum(DynastyConstant.ID_TANG);
+        //随机查询到的唐朝诗词id
+        GscRhythmic gscRhythmic = gscRhythmicMapper.queryTodayRandomRhythmic(DynastyConstant.ID_TANG, randomNum);
+        //获取诗的完整数据
+        return buildCompleteRhythmicById(gscRhythmic);
     }
 
 }

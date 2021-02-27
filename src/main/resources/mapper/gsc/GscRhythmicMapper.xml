@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crh.wxbase.gsc.mapper.GscRhythmicMapper">
+
+    <sql id="Base_Column_List">
+        id,author_id,dynasty_id,rhythmic,row_number,create_id,create_date,update_id,update_date
+    </sql>
+
+    <!-- 获取db 4言唐诗随机数 -->
+    <select id="queryTodayRandomNum" resultType="java.lang.Integer">
+        SELECT
+            FLOOR(RAND() *(count(id)))
+        FROM
+            gsc_rhythmic
+        WHERE
+            dynasty_id = #{dynastyId}
+            and row_number = 4
+    </select>
+
+    <!-- 获取db 随机4言唐诗 -->
+    <select id="queryTodayRandomRhythmic" resultType="com.crh.wxbase.gsc.entity.db.GscRhythmic">
+        SELECT
+            <include refid="Base_Column_List"/>
+        FROM
+            gsc_rhythmic
+        WHERE
+            dynasty_id = #{dynastyId}
+            and row_number = 4
+        LIMIT ${randomNum},1
+    </select>
+
+</mapper>
+

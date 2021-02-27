@@ -23,8 +23,8 @@ spring:
 
 #mybatis-plus
 mybatis-plus:
-  mapperLocations: classpath:com/crh/wxbase/gsc/mapper/*.xml
-  typeAliasesPackage: com.crh.wxbase.gsc.entity
+  mapperLocations: classpath:mapper/*/*.xml
+  typeAliasesPackage: com.crh.wxbase.*.entity
   configuration:
     mapUnderscoreToCamelCase: true
   global-config:
