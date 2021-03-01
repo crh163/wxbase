@@ -17,11 +17,11 @@ public class RhythmicInfoDto {
     /**
      * 诗词内容
      */
-    private List<GscParagraphs> paragraphsList;
+    private List<String> paragraphsTextList;
 
     /**
      * 作者
      */
-    private GscAuthor author;
+    private GscAuthorDto author;
 
 }

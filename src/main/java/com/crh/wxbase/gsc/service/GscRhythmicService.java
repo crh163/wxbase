@@ -7,14 +7,17 @@ import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.gsc.constant.DynastyConstant;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
+import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
+import com.crh.wxbase.gsc.entity.dto.GscAuthorDto;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
 import com.crh.wxbase.gsc.mapper.GscRhythmicMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author rory.chen
@@ -31,6 +34,9 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
 
     @Autowired
     private GscRhythmicMapper gscRhythmicMapper;
+
+    @Autowired
+    private GscDynastyService gscDynastyService;
 
     /**
      * 封装诗词详情数据
@@ -53,6 +59,8 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
     public RhythmicInfoDto buildCompleteRhythmicById(GscRhythmic rhythmic){
         //作者
         GscAuthor author = gscAuthorService.getById(rhythmic.getAuthorId());
+        //作者朝代
+        GscDynasty dynasty = gscDynastyService.getById(author.getDynastyId());
         //诗词内容
         QueryWrapper<GscParagraphs> wrapper = new QueryWrapper<>();
         wrapper.eq(ColumnConsts.RHYTHMIC_ID, rhythmic.getId());
@@ -60,8 +68,13 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
         //封装业务数据
         RhythmicInfoDto rhythmicInfoDto = new RhythmicInfoDto();
         rhythmicInfoDto.setRhythmic(rhythmic.getRhythmic());
-        rhythmicInfoDto.setAuthor(author);
-        rhythmicInfoDto.setParagraphsList(paragraphsList);
+        GscAuthorDto gscAuthorDto = new GscAuthorDto();
+        gscAuthorDto.setAuthorName(author.getName());
+        gscAuthorDto.setDescription(author.getDescription());
+        gscAuthorDto.setDynastyName(dynasty.getName());
+        rhythmicInfoDto.setAuthor(gscAuthorDto);
+        rhythmicInfoDto.setParagraphsTextList(paragraphsList.stream()
+                .map(GscParagraphs::getText).collect(Collectors.toList()));
         return rhythmicInfoDto;
     }
 
