@@ -33,7 +33,11 @@ public class SysMenuController {
     @PostMapping("/queryMenu")
     public Response queryMenu(String username) {
         List<SysMenuDto> sysMenuDtos = sysMenuService.queryMenu(username);
-        return ResponseUtil.getSuccess(sysMenuDtos);
+        //封装Index数据
+        SysMenuDto indexMenu = new SysMenuDto();
+        indexMenu.setComponent("Home");
+        indexMenu.setChildren(sysMenuDtos);
+        return ResponseUtil.getSuccess(indexMenu);
     }
 
 }

@@ -29,4 +29,14 @@ public class SysMenu extends BaseModel {
      */
     private String url;
 
+    /**
+     *
+     */
+    private String component;
+
+    /**
+     * 是否需要登录访问
+     */
+    private Integer requireAuth;
+
 }

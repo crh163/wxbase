@@ -88,7 +88,7 @@ public class AllDbServiceImpTest {
 
                 QueryWrapper<GscAuthor> wrapper = new QueryWrapper<>();
                 wrapper.eq("name", csvReader.get(headArray[2]))
-                        .eq("dynastyId", dynastyId);
+                        .eq("dynasty_id", dynastyId);
                 GscAuthor gscAuthor = gscAuthorService.getOne(wrapper);
                 if(gscAuthor == null){
                     gscAuthor = new GscAuthor();

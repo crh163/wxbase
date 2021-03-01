@@ -12,13 +12,10 @@ import com.crh.wxbase.common.utils.ArithmeticUtil;
 import com.crh.wxbase.common.utils.CollectionUtil;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.system.entity.SysUser;
-import com.crh.wxbase.system.entity.dto.LoginDto;
+import com.crh.wxbase.system.entity.dto.LoginReqDto;
 import com.crh.wxbase.system.service.SysUserService;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -86,14 +83,14 @@ public class SysUserController {
 
     @ApiOperation("管理后台登录")
     @PostMapping("/login")
-    public Response login(LoginDto loginDto){
-        return sysUserService.login(loginDto, request);
+    public Response login(LoginReqDto loginReqDto){
+        return sysUserService.login(loginReqDto, request);
     }
 
 
     @ApiOperation("管理后台登出")
     @PostMapping("/loginout")
-    public Response login(){
+    public Response loginout(){
         String token = request.getHeader(CommonConsts.X_ACCESS_TOKEN);
         request.getSession().removeAttribute(token);
         return ResponseUtil.getSuccess();

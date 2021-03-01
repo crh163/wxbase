@@ -1,6 +1,6 @@
 package com.crh.wxbase.system.entity.dto;
 
-import com.crh.wxbase.system.entity.SysMenu;
+import com.crh.wxbase.system.entity.dto.struct.MenuMeta;
 import lombok.Data;
 
 import java.util.List;
@@ -33,8 +33,18 @@ public class SysMenuDto {
     private String url;
 
     /**
+     *
+     */
+    private String component;
+
+    /**
+     * 是否需要登录访问结构
+     */
+    private MenuMeta meta;
+
+    /**
      * 子菜单
      */
-    private List<SysMenuDto> sysMenus;
+    private List<SysMenuDto> children;
 
 }

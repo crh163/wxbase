@@ -3,17 +3,18 @@ package com.crh.wxbase.system.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.common.constant.ColumnConsts;
 import com.crh.wxbase.common.constant.UserLevelConsts;
+import com.crh.wxbase.common.constant.YesOrNoConsts;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.system.entity.SysMenu;
 import com.crh.wxbase.system.entity.SysUser;
 import com.crh.wxbase.system.entity.dto.SysMenuDto;
+import com.crh.wxbase.system.entity.dto.struct.MenuMeta;
 import com.crh.wxbase.system.mapper.SysMenuMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author rory.chen
@@ -42,6 +43,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
                         ? new ArrayList<>() : menuMap.get(sysMenu.getPid());
                 SysMenuDto sysMenuDto = new SysMenuDto();
                 BeanUtils.copyProperties(sysMenu, sysMenuDto);
+                sysMenuDto.setMeta(new MenuMeta(YesOrNoConsts.YES_INT.equals(sysMenu.getRequireAuth())));
                 commonPidList.add(sysMenuDto);
                 menuMap.put(sysMenu.getPid(), commonPidList);
             }
@@ -51,9 +53,10 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
                 }
                 SysMenuDto sysMenuDto = new SysMenuDto();
                 BeanUtils.copyProperties(sysMenu, sysMenuDto);
+//                sysMenuDto.setMeta(new MenuMeta(YesOrNoConsts.YES_INT.equals(sysMenu.getRequireAuth())));
                 List<SysMenuDto> sysMenuDtos = menuMap.get(sysMenu.getId());
                 cycleAddChildMenus(sysMenuDtos, menuMap);
-                sysMenuDto.setSysMenus(sysMenuDtos);
+                sysMenuDto.setChildren(sysMenuDtos);
                 menusDto.add(sysMenuDto);
             }
         }
@@ -72,7 +75,7 @@ public class SysMenuService extends BaseService<SysMenuMapper, SysMenu> {
             List<SysMenuDto> sysMenuDtos = menuMap.get(sysMenuDto.getId());
             if(Objects.nonNull(sysMenuDtos)){
                 cycleAddChildMenus(sysMenuDtos, menuMap);
-                sysMenuDto.setSysMenus(sysMenuDtos);
+                sysMenuDto.setChildren(sysMenuDtos);
             }
         }
     }

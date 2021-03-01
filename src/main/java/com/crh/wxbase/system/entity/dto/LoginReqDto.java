@@ -8,7 +8,7 @@ import lombok.Data;
  * @date 2021-02-24 17:14
  */
 @Data
-public class LoginDto {
+public class LoginReqDto {
 
     /**
      * 用户名
