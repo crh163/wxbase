@@ -2,6 +2,8 @@ package com.crh.wxbase.gsc.controller;
 
 import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
+import com.crh.wxbase.common.entity.resp.Response;
+import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.gsc.service.GscDynastyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,16 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Api(tags = "诗词朝代")
-@RequestMapping("/gscType")
+@RequestMapping("/gscDynasty")
 public class GscDynastyController {
 
     @Autowired
     private GscDynastyService gscDynastyService;
 
-    @ApiOperation("查询诗词朝代")
-    @PostMapping("")
-    public PageableItemsDto query(@RequestBody QueryModel queryModel) {
-        return gscDynastyService.selectListByPage(queryModel);
+    @ApiOperation("查询所有朝代")
+    @PostMapping("queryAllDynasty")
+    public Response queryAllDynasty() {
+        gscDynastyService.queryAllDynasty();
+        return ResponseUtil.getSuccess();
     }
 
 }

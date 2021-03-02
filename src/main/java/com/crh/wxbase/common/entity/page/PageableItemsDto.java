@@ -11,6 +11,10 @@ import java.util.List;
 @Data
 public class PageableItemsDto<T> {
 
+    private Integer code;
+
+    private String msg;
+
     private List<T> items;
 
     private PageDto page;

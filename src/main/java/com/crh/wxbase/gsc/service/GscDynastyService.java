@@ -12,4 +12,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class GscDynastyService extends BaseService<GscDynastyMapper, GscDynasty> {
 
+    /**
+     *
+     */
+    public void queryAllDynasty() {
+
+    }
+
 }

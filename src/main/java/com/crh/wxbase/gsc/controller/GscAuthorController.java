@@ -23,6 +23,12 @@ public class GscAuthorController {
     @Autowired
     private GscAuthorService gscAuthorService;
 
+    /**
+     * TODO 暂未使用
+     *
+     * @param queryModel
+     * @return
+     */
     @ApiOperation("热门诗人")
     @PostMapping("")
     public PageableItemsDto query(@RequestBody QueryModel queryModel) {

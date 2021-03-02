@@ -26,13 +26,7 @@ public class GscRhythmicController {
     @Autowired
     private GscRhythmicService gscRhythmicService;
 
-    @ApiOperation("查询古诗词数据")
-    @PostMapping("")
-    public PageableItemsDto query(@RequestBody QueryModel queryModel) {
-        return gscRhythmicService.selectListByPage(queryModel);
-    }
-
-    @ApiOperation("查询诗词详情数据")
+    @ApiOperation("根据诗词标题id查询完整数据")
     @PostMapping("queryInfoById")
     public Response queryInfoById(Long rhythmicId) {
         RhythmicInfoDto rhythmicInfoDto = gscRhythmicService.buildCompleteRhythmicById(rhythmicId);

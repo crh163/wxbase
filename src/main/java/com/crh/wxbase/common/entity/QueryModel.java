@@ -36,6 +36,9 @@ public class QueryModel {
     @ApiModelProperty("选中的记录ID列表")
     private List<Long> ids;
 
+    @ApiModelProperty("选中的单个记录ID")
+    private Long id;
+
     public boolean isAsc() {
         return CommonConsts.ASC.equals(orderSeq);
     }
