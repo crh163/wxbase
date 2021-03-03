@@ -1,77 +1,163 @@
-2021-03-02 14:48:14,448 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on SK-EJRHNUNDSCSI with PID 23776 (E:\github\wxbase\target\classes started by rory.chen in E:\github\wxbase)
-2021-03-02 14:48:14,469 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-03-02 14:48:14,416 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-03-02 14:48:16,353 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-03-02 14:48:16,358 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-03-02 14:48:16,428 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 46ms. Found 0 Redis repository interfaces.
-2021-03-02 14:48:17,701 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-03-02 14:48:17,718 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-03-02 14:48:17,719 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-03-02 14:48:17,720 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-03-02 14:48:17,896 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-03-02 14:48:17,896 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 3277 ms
-2021-03-02 14:48:20,491 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-03-02 14:48:21,582 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-03-02 14:48:22,198 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-03-02 14:48:22,222 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-03-02 14:48:22,224 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-03-02 14:48:22,255 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-03-02 14:48:22,310 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-03-02 14:48:22,560 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-03-02 14:48:22,566 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-03-02 14:48:22,586 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_3
-2021-03-02 14:48:22,591 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-03-02 14:48:22,622 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-03-02 14:48:22,632 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_4
-2021-03-02 14:48:22,634 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-03-02 14:48:23,212 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-03-02 14:48:23,232 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 10.221 seconds (JVM running for 12.019)
-2021-03-02 15:44:08,989 INFO [http-nio-9081-exec-3] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-03-02 15:44:08,992 INFO [http-nio-9081-exec-3] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-03-02 15:44:09,072 INFO [http-nio-9081-exec-3] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 80 ms
-2021-03-02 15:52:39,771 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysconfig/insert
-2021-03-02 15:52:39,772 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 15:52:39,773 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 15:52:39,780 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysConfigController.insert
-2021-03-02 15:52:39,789 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"propName":"q","propValue":"w","propDesc":"q"}]
-2021-03-02 15:52:39,909 INFO [http-nio-9081-exec-7] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
-2021-03-02 15:52:40,263 INFO [http-nio-9081-exec-7] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
-2021-03-02 15:52:40,319 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
-2021-03-02 15:52:40,319 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :548毫秒 
-2021-03-02 15:53:12,589 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysconfig/update
-2021-03-02 15:53:12,590 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 15:53:12,591 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 15:53:12,592 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysConfigController.update
-2021-03-02 15:53:12,593 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"propName":"w","propValue":"w","propDesc":"w","id":14}]
-2021-03-02 15:53:12,634 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
-2021-03-02 15:53:12,635 INFO [http-nio-9081-exec-1] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :46毫秒 
-2021-03-02 15:53:33,482 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysconfig/deleteByIds
-2021-03-02 15:53:33,484 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 15:53:33,487 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 15:53:33,488 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysConfigController.deleteByIds
-2021-03-02 15:53:33,489 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : ["14"]
-2021-03-02 15:53:33,558 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
-2021-03-02 15:53:33,558 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :76毫秒 
-2021-03-02 15:53:44,028 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysconfig/deleteByIds
-2021-03-02 15:53:44,029 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 15:53:44,029 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 15:53:44,030 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysConfigController.deleteByIds
-2021-03-02 15:53:44,030 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : ["14,13"]
-2021-03-02 15:53:52,177 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysconfig/deleteByIds
-2021-03-02 15:53:52,178 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 15:53:52,179 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 15:53:52,179 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysConfigController.deleteByIds
-2021-03-02 15:53:52,180 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : ["12,13"]
-2021-03-02 15:53:52,224 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
-2021-03-02 15:53:52,224 INFO [http-nio-9081-exec-3] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :47毫秒 
-2021-03-02 16:22:31,285 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/sysuser
-2021-03-02 16:22:31,285 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-03-02 16:22:31,286 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-03-02 16:22:31,286 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysUserController.query
-2021-03-02 16:22:31,291 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"orderSeq":"asc","ids":[1]}]
-2021-03-02 16:22:31,341 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"items":[{"username":"admin","password":"noB9aMI0hoOTX16hnydECw\u003d\u003d","gender":"1","phone":"18270303397","levelId":1,"id":1,"createId":1,"createDate":"Feb 24, 2021 11:52:22 AM"}]}
-2021-03-02 16:22:31,342 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :57毫秒 
-2021-03-02 16:31:14,645 WARN [http-nio-9081-exec-3] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 199] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize instance of `java.util.ArrayList<java.lang.Long>` out of VALUE_NUMBER_INT token; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize instance of `java.util.ArrayList<java.lang.Long>` out of VALUE_NUMBER_INT token
- at [Source: (PushbackInputStream); line: 2, column: 10] (through reference chain: com.crh.wxbase.common.entity.QueryModel["ids"])]
-2021-03-02 16:31:36,052 WARN [http-nio-9081-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java : 199] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1]); nested exception is com.fasterxml.jackson.core.io.JsonEOFException: Unexpected end-of-input: expected close marker for Object (start marker at [Source: (PushbackInputStream); line: 1, column: 1])
- at [Source: (PushbackInputStream); line: 4, column: 4]]
+2021-03-03 16:19:48,678 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 12856 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:19:48,618 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:19:48,727 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:19:52,655 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:19:52,666 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:19:52,766 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 69ms. Found 0 Redis repository interfaces.
+2021-03-03 16:20:07,001 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:20:11,205 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:20:13,901 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:20:14,003 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:20:14,131 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:20:14,889 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:20:14,917 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:20:14,932 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:20:14,953 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:20:14,969 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:20:15,617 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:20:15,648 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 28.434 seconds (JVM running for 35.805)
+2021-03-03 16:20:16,362 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:20:17,155 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:20:17,315 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:20:17,329 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:20:17,345 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:21:38,828 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:21:38,854 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 7120 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:21:38,855 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:21:42,512 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:21:42,519 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:21:42,646 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 92ms. Found 0 Redis repository interfaces.
+2021-03-03 16:21:52,652 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:21:56,481 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:21:58,304 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:21:58,396 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:21:58,510 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:21:59,129 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:21:59,149 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:21:59,162 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:21:59,178 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:21:59,182 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:21:59,880 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:21:59,910 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 22.182 seconds (JVM running for 25.704)
+2021-03-03 16:22:00,669 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:22:01,362 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:22:01,689 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:22:01,707 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:22:01,800 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:22:25,498 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:22:25,534 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 8240 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:22:25,536 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:22:28,726 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:22:28,734 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:22:28,827 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 66ms. Found 0 Redis repository interfaces.
+2021-03-03 16:22:37,580 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:22:41,202 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:22:42,978 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:22:43,072 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:22:43,186 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:22:43,942 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:22:43,957 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:22:43,971 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:22:43,987 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:22:43,990 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:22:44,678 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:22:44,708 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 20.323 seconds (JVM running for 23.811)
+2021-03-03 16:22:45,361 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:22:46,192 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:22:46,914 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:22:46,919 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:22:46,935 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:24:52,629 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:24:52,665 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 26324 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:24:52,667 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:24:55,978 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:24:55,986 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:24:56,075 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 66ms. Found 0 Redis repository interfaces.
+2021-03-03 16:25:09,767 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:25:16,130 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:25:19,377 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:25:19,515 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:25:19,705 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:25:21,094 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:25:21,158 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:25:21,173 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:25:21,233 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:25:21,238 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:25:21,947 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:25:21,986 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 30.593 seconds (JVM running for 34.288)
+2021-03-03 16:25:22,920 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:25:23,837 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:25:24,593 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:25:24,610 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:25:24,740 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:26:51,173 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:26:51,192 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 23516 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:26:51,195 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:26:54,196 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:26:54,200 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:26:54,296 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 72ms. Found 0 Redis repository interfaces.
+2021-03-03 16:27:02,697 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:27:06,469 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:27:08,210 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:27:08,295 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:27:08,410 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:27:09,018 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:27:09,040 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:27:09,055 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:27:09,072 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:27:09,086 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:27:09,771 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:27:09,810 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 20.045 seconds (JVM running for 24.161)
+2021-03-03 16:27:10,585 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:27:11,386 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:33:37,381 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m25s862ms318µs500ns).
+2021-03-03 16:33:37,536 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:33:37,548 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:33:37,582 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:37:43,254 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:37:43,315 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 26604 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:37:43,320 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:37:46,811 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:37:46,822 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:37:46,968 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 84ms. Found 0 Redis repository interfaces.
+2021-03-03 16:37:55,782 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:37:59,279 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:38:01,458 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:38:01,549 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:38:01,695 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:38:02,446 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:38:02,469 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:38:02,476 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:38:02,494 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:38:02,512 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:38:03,211 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:38:03,268 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 21.552 seconds (JVM running for 26.166)
+2021-03-03 16:38:03,956 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:38:04,687 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:38:16,269 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:38:16,274 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:38:16,348 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-03-03 16:39:11,867 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-03-03 16:39:11,901 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 55] Starting GscDynastyServiceImpTest on SK-EJRHNUNDSCSI with PID 22900 (started by rory.chen in E:\github\wxbase)
+2021-03-03 16:39:11,905 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-03-03 16:39:15,666 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-03 16:39:15,671 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-03 16:39:15,779 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 75ms. Found 0 Redis repository interfaces.
+2021-03-03 16:39:29,432 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-03 16:39:34,687 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:39:37,062 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-03-03 16:39:37,173 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-03-03 16:39:37,328 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-03-03 16:39:38,140 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-03-03 16:39:38,162 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-03-03 16:39:38,203 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-03-03 16:39:38,242 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-03-03 16:39:38,251 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-03-03 16:39:38,917 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-03-03 16:39:38,949 INFO [main] c.c.w.g.s.GscDynastyServiceImpTest [StartupInfoLogger.java : 61] Started GscDynastyServiceImpTest in 28.142 seconds (JVM running for 31.414)
+2021-03-03 16:39:39,661 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-03-03 16:39:40,679 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-03-03 16:41:31,914 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m51s125ms989µs800ns).
+2021-03-03 16:41:31,993 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-03 16:41:31,998 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-03-03 16:41:32,016 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.

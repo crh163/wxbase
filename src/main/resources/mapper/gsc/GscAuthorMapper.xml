@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.crh.wxbase.gsc.mapper.GscAuthorMapper">
+
+    <sql id="Base_Column_List">
+        id,name,description,dynasty_id,create_id,create_date,update_id,update_date
+    </sql>
+
+    <!-- 查询所有朝代的信息，10个作者对应的诗 -->
+    <select id="selectAuthorPoetryByDynastyId" resultType="com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry">
+        <foreach item="item" collection="dynIds" separator="" index="index">
+            (
+             SELECT  a.id authorId,a.name authorName,a.dynasty_id dynastyId,count(*) poetryNumber
+             FROM (
+                select * from gsc_author where dynasty_id=#{item} limit 10
+             ) a
+             LEFT JOIN gsc_rhythmic r ON a.id = r.author_id
+             GROUP BY a.id
+            )
+            <if test="index != (dynIds.size() - 1)">
+                UNION ALL
+            </if>
+        </foreach>
+    </select>
+
+</mapper>
+
