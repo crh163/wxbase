@@ -1,7 +1,7 @@
 package com.crh.wxbase.gsc.controller;
 
-import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
+import com.crh.wxbase.gsc.entity.dto.QueryAuthorByDynasty;
 import com.crh.wxbase.gsc.service.GscAuthorService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,15 +24,15 @@ public class GscAuthorController {
     private GscAuthorService gscAuthorService;
 
     /**
-     * TODO 暂未使用
+     * 根据朝代查询所有诗人对应的诗句
      *
-     * @param queryModel
+     * @param queryAuthorByDynasty
      * @return
      */
     @ApiOperation("热门诗人")
-    @PostMapping("")
-    public PageableItemsDto query(@RequestBody QueryModel queryModel) {
-        return gscAuthorService.selectListByPage(queryModel);
+    @PostMapping("/queryAuthorByDynasty")
+    public PageableItemsDto query(@RequestBody QueryAuthorByDynasty queryAuthorByDynasty) {
+        return null;
     }
 
 }

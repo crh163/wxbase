@@ -33,7 +33,7 @@ public class GscDynastyService extends BaseService<GscDynastyMapper, GscDynasty>
     public List<GscDynastyPoetryDto> queryAllDynasty() {
         List<GscDynasty> gscDynasties = list();
         List<Long> dynIds = gscDynasties.stream().map(GscDynasty::getId).collect(Collectors.toList());
-        List<GscAuthorPoetry> authorPoetrys = gscAuthorMapper.selectAuthorPoetryByDynastyId(dynIds);
+        List<GscAuthorPoetry> authorPoetrys = gscAuthorMapper.selectDynastyAuthorPoetry(dynIds);
         List<GscDynastyPoetryDto> gscDynastyPoetryDtos = new ArrayList<>();
         for(GscDynasty gscDynasty : gscDynasties){
             List<AuthorPoetryDto> authorPoetryDtos = new ArrayList<>();

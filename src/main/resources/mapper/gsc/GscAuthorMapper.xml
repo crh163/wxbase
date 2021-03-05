@@ -8,20 +8,31 @@
     </sql>
 
     <!-- 查询所有朝代的信息，10个作者对应的诗 -->
-    <select id="selectAuthorPoetryByDynastyId" resultType="com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry">
+    <select id="selectDynastyAuthorPoetry" resultType="com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry">
         <foreach item="item" collection="dynIds" separator="" index="index">
             (
-             SELECT  a.id authorId,a.name authorName,a.dynasty_id dynastyId,count(*) poetryNumber
-             FROM (
-                select * from gsc_author where dynasty_id=#{item} limit 10
-             ) a
-             LEFT JOIN gsc_rhythmic r ON a.id = r.author_id
-             GROUP BY a.id
+            SELECT  a.id authorId,a.name authorName,a.dynasty_id dynastyId,count(*) poetryNumber
+            FROM (
+            SELECT * FROM gsc_author WHERE dynasty_id=#{item} limit 10
+            ) a
+            LEFT JOIN gsc_rhythmic r ON a.id = r.author_id
+            GROUP BY a.id
             )
             <if test="index != (dynIds.size() - 1)">
                 UNION ALL
             </if>
         </foreach>
+    </select>
+
+    <!-- 根据朝代查询所有诗人对应的诗句 -->
+    <select id="selectAuthorPoetryByDynastyId" resultType="com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry">
+        SELECT a.id authorId,a.name authorName,a.dynasty_id dynastyId,count(*) poetryNumber
+        FROM gsc_dynasty d
+        LEFT JOIN gsc_author a on d.id = a.dynasty_id
+        LEFT JOIN gsc_rhythmic r on a.id = r.author_id
+        WHERE d.id=#{dynastyId}
+        GROUP BY a.id
+        LIMIT 100 ${limitStr}
     </select>
 
 </mapper>
