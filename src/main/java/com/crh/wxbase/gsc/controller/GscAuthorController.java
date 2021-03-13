@@ -32,7 +32,7 @@ public class GscAuthorController {
     @ApiOperation("热门诗人")
     @PostMapping("/queryAuthorByDynasty")
     public PageableItemsDto query(@RequestBody QueryAuthorByDynasty queryAuthorByDynasty) {
-        return null;
+        return gscAuthorService.queryAuthorPoetryByDynastyId(queryAuthorByDynasty);
     }
 
 }

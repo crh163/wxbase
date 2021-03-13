@@ -1,6 +1,8 @@
 package com.crh.wxbase.gsc.service;
 
+import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry;
+import com.crh.wxbase.gsc.entity.dto.QueryAuthorByDynasty;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +25,11 @@ public class GscAuthorServiceImpTest {
 
     @Test
     public void test() {
-        List<GscAuthorPoetry> gscAuthorPoetries = gscAuthorService.queryAuthorPoetryByDynastyId(15L);
+        QueryAuthorByDynasty authorByDynasty = new QueryAuthorByDynasty();
+        authorByDynasty.setDynastyId(15L);
+        authorByDynasty.setPage(1);
+        authorByDynasty.setPageSize(20);
+        PageableItemsDto gscAuthorPoetries = gscAuthorService.queryAuthorPoetryByDynastyId(authorByDynasty);
         int i =0;
     }
 }

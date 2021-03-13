@@ -30,9 +30,8 @@
         FROM gsc_dynasty d
         LEFT JOIN gsc_author a on d.id = a.dynasty_id
         LEFT JOIN gsc_rhythmic r on a.id = r.author_id
-        WHERE d.id=#{dynastyId}
+        WHERE a.id in (${authorIds})
         GROUP BY a.id
-        LIMIT 100 ${limitStr}
     </select>
 
 </mapper>

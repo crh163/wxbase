@@ -69,6 +69,19 @@ public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends S
             });
         }
 
+        return selectPageSpecial(queryModel, queryWrapper);
+    }
+
+
+    /**
+     * 分页内容
+     *
+     * @param queryModel
+     * @param queryWrapper
+     * @return
+     */
+    public PageableItemsDto<T> selectPageSpecial(QueryModel queryModel, QueryWrapper queryWrapper){
+        PageableItemsDto<T> itemsDto = new PageableItemsDto<>();
         Page<T> page = new Page<>(queryModel.getPage(), queryModel.getPageSize());
         page(page, queryWrapper);
         PageDto pageDto = new PageDto();
@@ -80,6 +93,7 @@ public class BaseService<M extends BaseMapper<T>, T extends BaseModel> extends S
         itemsDto.setPage(pageDto);
         return buildCodeAndMsg(itemsDto);
     }
+
 
     @Override
     public boolean save(T entity) {

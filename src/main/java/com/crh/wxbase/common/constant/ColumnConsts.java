@@ -12,4 +12,6 @@ public class ColumnConsts {
 
     public static final String USERNAME = "username";
 
+    public static final String DYNASTY_ID = "dynasty_id";
+
 }
