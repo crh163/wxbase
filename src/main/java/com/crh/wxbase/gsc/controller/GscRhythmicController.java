@@ -1,9 +1,9 @@
 package com.crh.wxbase.gsc.controller;
 
-import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
 import io.swagger.annotations.Api;
@@ -27,10 +27,16 @@ public class GscRhythmicController {
     private GscRhythmicService gscRhythmicService;
 
     @ApiOperation("根据诗词标题id查询完整数据")
-    @PostMapping("queryInfoById")
+    @PostMapping("/queryInfoById")
     public Response queryInfoById(Long rhythmicId) {
         RhythmicInfoDto rhythmicInfoDto = gscRhythmicService.buildCompleteRhythmicById(rhythmicId);
         return ResponseUtil.getSuccess(rhythmicInfoDto);
+    }
+
+    @ApiOperation("根据诗人分页查询古诗词")
+    @PostMapping("/queryRhythmicByAuthorId")
+    public PageableItemsDto queryRhythmicByAuthorId(@RequestBody QueryRhythmicByAuthor queryRhythmicByAuthor) {
+        return gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthor);
     }
 
 }

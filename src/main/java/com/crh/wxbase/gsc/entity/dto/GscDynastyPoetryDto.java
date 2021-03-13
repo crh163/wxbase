@@ -1,6 +1,6 @@
 package com.crh.wxbase.gsc.entity.dto;
 
-import com.crh.wxbase.gsc.entity.dto.pojo.AuthorPoetryDto;
+import com.crh.wxbase.gsc.entity.dto.pojo.AuthorPoetry;
 import lombok.Data;
 
 import java.util.List;
@@ -25,6 +25,6 @@ public class GscDynastyPoetryDto {
     /**
      * 作者信息
      */
-    private List<AuthorPoetryDto> authorPoetrys;
+    private List<AuthorPoetry> authorPoetrys;
 
 }

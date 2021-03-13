@@ -27,8 +27,8 @@ public class GscDynastyController {
 
     @ApiOperation("查询所有朝代信息")
     @PostMapping("queryAllDynasty")
-    public Response queryAllDynasty() {
-        List<GscDynastyPoetryDto> gscDynastyPoetryDtos = gscDynastyService.queryAllDynasty();
+    public Response queryAllDynasty(Integer isQueryAuthor) {
+        List<GscDynastyPoetryDto> gscDynastyPoetryDtos = gscDynastyService.queryAllDynasty(isQueryAuthor);
         return ResponseUtil.getSuccess(gscDynastyPoetryDtos);
     }
 

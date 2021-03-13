@@ -1,25 +1,19 @@
 package com.crh.wxbase.gsc.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.crh.wxbase.common.constant.ColumnConsts;
 import com.crh.wxbase.common.entity.QueryModel;
-import com.crh.wxbase.common.entity.page.PageDto;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
-import com.crh.wxbase.gsc.entity.db.GscDynasty;
-import com.crh.wxbase.gsc.entity.dto.QueryAuthorByDynasty;
-import com.crh.wxbase.gsc.entity.dto.pojo.AuthorPoetryDto;
+import com.crh.wxbase.gsc.entity.dto.req.QueryAuthorByDynasty;
 import com.crh.wxbase.gsc.mapper.GscAuthorMapper;
-import com.crh.wxbase.gsc.mapper.GscDynastyMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,7 +28,7 @@ public class GscAuthorService extends BaseService<GscAuthorMapper, GscAuthor> {
     private GscAuthorMapper gscAuthorMapper;
 
     /**
-     * 根据朝代查询所有诗人对应的诗句
+     * 根据朝代查询所有诗人对应的诗数
      *
      * @param authorByDynasty
      * @return

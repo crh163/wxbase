@@ -2,20 +2,25 @@ package com.crh.wxbase.gsc.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.common.constant.ColumnConsts;
-import com.crh.wxbase.common.entity.resp.Response;
+import com.crh.wxbase.common.entity.QueryModel;
+import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.service.BaseService;
-import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.gsc.constant.DynastyConstant;
+import com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
 import com.crh.wxbase.gsc.entity.dto.GscAuthorDto;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
 import com.crh.wxbase.gsc.mapper.GscRhythmicMapper;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -67,7 +72,9 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
         List<GscParagraphs> paragraphsList = gscParagraphsService.list(wrapper);
         //封装业务数据
         RhythmicInfoDto rhythmicInfoDto = new RhythmicInfoDto();
+        rhythmicInfoDto.setRhythmicId(rhythmic.getId());
         rhythmicInfoDto.setRhythmic(rhythmic.getRhythmic());
+        rhythmicInfoDto.setRowNumber(rhythmic.getRowNumber());
         GscAuthorDto gscAuthorDto = new GscAuthorDto();
         gscAuthorDto.setAuthorName(author.getName());
         gscAuthorDto.setDescription(author.getDescription());
@@ -90,6 +97,33 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
         GscRhythmic gscRhythmic = gscRhythmicMapper.queryTodayRandomRhythmic(DynastyConstant.ID_TANG, randomNum);
         //获取诗的完整数据
         return buildCompleteRhythmicById(gscRhythmic);
+    }
+
+
+    /**
+     * 根据诗人分页查询古诗词
+     *
+     * @param queryRhythmicByAuthor
+     * @return
+     */
+    public PageableItemsDto queryRhythmicByAuthorId(QueryRhythmicByAuthor queryRhythmicByAuthor) {
+        QueryModel queryModel = new QueryModel();
+        queryModel.setPage(queryRhythmicByAuthor.getPage());
+        queryModel.setPageSize(queryRhythmicByAuthor.getPageSize());
+        PageableItemsDto<GscRhythmic> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscRhythmic>()
+                .eq(ColumnConsts.AUTHOR_ID, queryRhythmicByAuthor.getAuthorId()));
+        if(CollectionUtils.isEmpty(itemsDto.getItems())) {
+            return itemsDto;
+        }
+        PageableItemsDto<RhythmicInfoDto> rhythmicItemsDto = new PageableItemsDto<>();
+        BeanUtils.copyProperties(itemsDto, rhythmicItemsDto);
+        List<Long> thythmicIds = itemsDto.getItems().stream().map(GscRhythmic::getId).collect(Collectors.toList());
+        List<RhythmicInfoDto> rhythmicInfoDtoList = new ArrayList<>();
+        for(Long thythmicId : thythmicIds){
+            rhythmicInfoDtoList.add(buildCompleteRhythmicById(thythmicId));
+        }
+        rhythmicItemsDto.setItems(rhythmicInfoDtoList);
+        return rhythmicItemsDto;
     }
 
 }

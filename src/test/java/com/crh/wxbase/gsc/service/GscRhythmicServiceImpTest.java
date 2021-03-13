@@ -2,6 +2,7 @@ package com.crh.wxbase.gsc.service;
 
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.gsc.entity.dto.req.QueryAuthorByDynasty;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +16,18 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GscAuthorServiceImpTest {
+public class GscRhythmicServiceImpTest {
 
     @Autowired
-    private GscAuthorService gscAuthorService;
+    private GscRhythmicService gscRhythmicService;
 
     @Test
     public void test() {
-        QueryAuthorByDynasty authorByDynasty = new QueryAuthorByDynasty();
-        authorByDynasty.setDynastyId(15L);
-        authorByDynasty.setPage(1);
-        authorByDynasty.setPageSize(20);
-        PageableItemsDto gscAuthorPoetries = gscAuthorService.queryAuthorPoetryByDynastyId(authorByDynasty);
+        QueryRhythmicByAuthor queryRhythmicByAuthor = new QueryRhythmicByAuthor();
+        queryRhythmicByAuthor.setPage(1);
+        queryRhythmicByAuthor.setPageSize(5);
+        queryRhythmicByAuthor.setAuthorId(1L);
+        PageableItemsDto pageableItemsDto = gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthor);
         int i =0;
     }
 }

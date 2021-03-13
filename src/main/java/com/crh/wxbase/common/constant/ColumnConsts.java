@@ -14,4 +14,6 @@ public class ColumnConsts {
 
     public static final String DYNASTY_ID = "dynasty_id";
 
+    public static final String AUTHOR_ID = "author_id";
+
 }

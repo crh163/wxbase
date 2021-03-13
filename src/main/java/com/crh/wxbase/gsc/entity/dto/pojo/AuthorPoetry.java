@@ -7,7 +7,7 @@ import lombok.Data;
  * @date 2021-03-03 16:31
  */
 @Data
-public class AuthorPoetryDto {
+public class AuthorPoetry {
 
     /**
      * 作者id

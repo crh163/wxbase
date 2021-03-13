@@ -13,6 +13,6 @@ public class GscAuthorDto {
 
     private String description;
 
-    private String  dynastyName;
+    private String dynastyName;
 
 }

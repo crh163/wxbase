@@ -1,4 +1,4 @@
-package com.crh.wxbase.gsc.entity.dto;
+package com.crh.wxbase.gsc.entity.dto.req;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
