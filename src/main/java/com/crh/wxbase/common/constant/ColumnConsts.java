@@ -16,4 +16,10 @@ public class ColumnConsts {
 
     public static final String AUTHOR_ID = "author_id";
 
+    public static final String NAME = "name";
+
+    public static final String TEXT = "text";
+
+    public static final String RHYTHMIC = "rhythmic";
+
 }

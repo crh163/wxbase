@@ -1,7 +1,7 @@
 package com.crh.wxbase.gsc.service;
 
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
-import com.crh.wxbase.gsc.entity.dto.req.QueryAuthorByDynasty;
+import com.crh.wxbase.gsc.entity.dto.req.QueryAuthorByDynastyReq;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class GscAuthorServiceImpTest {
 
     @Test
     public void test() {
-        QueryAuthorByDynasty authorByDynasty = new QueryAuthorByDynasty();
+        QueryAuthorByDynastyReq authorByDynasty = new QueryAuthorByDynastyReq();
         authorByDynasty.setDynastyId(15L);
         authorByDynasty.setPage(1);
         authorByDynasty.setPageSize(20);

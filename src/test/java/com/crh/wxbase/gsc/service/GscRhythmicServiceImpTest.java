@@ -1,8 +1,7 @@
 package com.crh.wxbase.gsc.service;
 
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
-import com.crh.wxbase.gsc.entity.dto.req.QueryAuthorByDynasty;
-import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthorReq;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +22,11 @@ public class GscRhythmicServiceImpTest {
 
     @Test
     public void test() {
-        QueryRhythmicByAuthor queryRhythmicByAuthor = new QueryRhythmicByAuthor();
-        queryRhythmicByAuthor.setPage(1);
-        queryRhythmicByAuthor.setPageSize(5);
-        queryRhythmicByAuthor.setAuthorId(1L);
-        PageableItemsDto pageableItemsDto = gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthor);
+        QueryRhythmicByAuthorReq queryRhythmicByAuthorReq = new QueryRhythmicByAuthorReq();
+        queryRhythmicByAuthorReq.setPage(1);
+        queryRhythmicByAuthorReq.setPageSize(5);
+        queryRhythmicByAuthorReq.setAuthorId(1L);
+        PageableItemsDto pageableItemsDto = gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthorReq);
         int i =0;
     }
 }

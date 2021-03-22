@@ -3,7 +3,7 @@ package com.crh.wxbase.gsc.controller;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
-import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthorReq;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
 import io.swagger.annotations.Api;
@@ -35,8 +35,8 @@ public class GscRhythmicController {
 
     @ApiOperation("根据诗人分页查询古诗词")
     @PostMapping("/queryRhythmicByAuthorId")
-    public PageableItemsDto queryRhythmicByAuthorId(@RequestBody QueryRhythmicByAuthor queryRhythmicByAuthor) {
-        return gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthor);
+    public PageableItemsDto queryRhythmicByAuthorId(@RequestBody QueryRhythmicByAuthorReq queryRhythmicByAuthorReq) {
+        return gscRhythmicService.queryRhythmicByAuthorId(queryRhythmicByAuthorReq);
     }
 
 }

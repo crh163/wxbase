@@ -6,14 +6,16 @@ import com.crh.wxbase.common.entity.QueryModel;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.gsc.constant.DynastyConstant;
-import com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry;
 import com.crh.wxbase.gsc.entity.db.GscAuthor;
 import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
 import com.crh.wxbase.gsc.entity.dto.GscAuthorDto;
-import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthor;
+import com.crh.wxbase.gsc.entity.dto.req.QueryRhythmicByAuthorReq;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
+import com.crh.wxbase.gsc.entity.dto.req.SearchRhythmicReq;
+import com.crh.wxbase.gsc.entity.dto.res.SearchRhythmicRes;
+import com.crh.wxbase.gsc.mapper.GscAuthorMapper;
 import com.crh.wxbase.gsc.mapper.GscRhythmicMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,8 @@ import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
@@ -36,6 +40,9 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
 
     @Autowired
     private GscAuthorService gscAuthorService;
+
+    @Autowired
+    private GscAuthorMapper gscAuthorMapper;
 
     @Autowired
     private GscRhythmicMapper gscRhythmicMapper;
@@ -103,15 +110,15 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
     /**
      * 根据诗人分页查询古诗词
      *
-     * @param queryRhythmicByAuthor
+     * @param queryRhythmicByAuthorReq
      * @return
      */
-    public PageableItemsDto queryRhythmicByAuthorId(QueryRhythmicByAuthor queryRhythmicByAuthor) {
+    public PageableItemsDto queryRhythmicByAuthorId(QueryRhythmicByAuthorReq queryRhythmicByAuthorReq) {
         QueryModel queryModel = new QueryModel();
-        queryModel.setPage(queryRhythmicByAuthor.getPage());
-        queryModel.setPageSize(queryRhythmicByAuthor.getPageSize());
+        queryModel.setPage(queryRhythmicByAuthorReq.getPage());
+        queryModel.setPageSize(queryRhythmicByAuthorReq.getPageSize());
         PageableItemsDto<GscRhythmic> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscRhythmic>()
-                .eq(ColumnConsts.AUTHOR_ID, queryRhythmicByAuthor.getAuthorId()));
+                .eq(ColumnConsts.AUTHOR_ID, queryRhythmicByAuthorReq.getAuthorId()));
         if(CollectionUtils.isEmpty(itemsDto.getItems())) {
             return itemsDto;
         }
@@ -125,5 +132,40 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
         rhythmicItemsDto.setItems(rhythmicInfoDtoList);
         return rhythmicItemsDto;
     }
+
+
+    /**
+     * app究极搜索
+     *
+     * @param searchRhythmicReq
+     * @return
+     */
+    public PageableItemsDto queryAuthorToAppSearch(SearchRhythmicReq searchRhythmicReq){
+        QueryModel queryModel = new QueryModel();
+        queryModel.setPage(searchRhythmicReq.getPage());
+        queryModel.setPageSize(searchRhythmicReq.getPageSize());
+        PageableItemsDto<GscRhythmic> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscRhythmic>()
+                .like(ColumnConsts.RHYTHMIC, searchRhythmicReq.getSearchText()));
+        if(CollectionUtils.isEmpty(itemsDto.getItems())) {
+            return itemsDto;
+        }
+        PageableItemsDto<SearchRhythmicRes> poetryItemsDto = new PageableItemsDto<>();
+        BeanUtils.copyProperties(itemsDto, poetryItemsDto);
+        List<SearchRhythmicRes> searchRhythmicList = new ArrayList<>();
+
+        Set<Long> authorIds = itemsDto.getItems().stream().map(GscRhythmic::getAuthorId).collect(Collectors.toSet());
+        Map<Long, String> authorMap = gscAuthorMapper.selectBatchIds(authorIds)
+                .stream().collect(Collectors.toMap(GscAuthor::getId, GscAuthor::getName));
+        for(GscRhythmic rhythmic : itemsDto.getItems()){
+            SearchRhythmicRes searchRhythmicRes = new SearchRhythmicRes();
+            searchRhythmicRes.setRhythmicId(rhythmic.getId());
+            searchRhythmicRes.setRhythmicName(rhythmic.getRhythmic());
+            searchRhythmicRes.setAuthorName(authorMap.get(rhythmic.getAuthorId()));
+            searchRhythmicList.add(searchRhythmicRes);
+        }
+        poetryItemsDto.setItems(searchRhythmicList);
+        return poetryItemsDto;
+    }
+
 
 }

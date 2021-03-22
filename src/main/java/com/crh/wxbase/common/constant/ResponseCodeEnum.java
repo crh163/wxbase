@@ -16,7 +16,10 @@ public enum ResponseCodeEnum {
 
     FAIL_ALL_DELETE_NULL_ID(6001, "未查询到可删除内容，删除失败！"),
     FAIL_ALL_DELETE_PORTION_NULL_ID(6002, "待删除数据中有未存在数据，删除失败！"),
-    FAIL_ALL_UPDATE_NULL_ID(6003, "未携带id值，修改失败！"),;
+    FAIL_ALL_UPDATE_NULL_ID(6003, "未携带id值，修改失败！"),
+
+
+    FAIL_INDEX_NULL_SEARCHTYPE(7001, "查询类型参数有误，请检查！");
 
 
     private Integer code;

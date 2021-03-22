@@ -1,25 +1,43 @@
 package com.crh.wxbase.gsc.controller;
 
 import com.crh.wxbase.common.constant.CommonConsts;
+import com.crh.wxbase.common.constant.ResponseCodeEnum;
+import com.crh.wxbase.common.entity.page.ItemsDto;
+import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.gsc.constant.AppSearchEnum;
 import com.crh.wxbase.gsc.constant.RedisKeyConstant;
 import com.crh.wxbase.gsc.entity.dto.RhythmicInfoDto;
+import com.crh.wxbase.gsc.entity.dto.req.SearchRhythmicReq;
+import com.crh.wxbase.gsc.entity.dto.res.SearchPageableItemsRes;
+import com.crh.wxbase.gsc.entity.dto.res.SearchRhythmicRes;
+import com.crh.wxbase.gsc.service.GscAuthorService;
+import com.crh.wxbase.gsc.service.GscParagraphsService;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
-import com.crh.wxbase.system.entity.SysUser;
+import com.crh.wxbase.gsc.thread.AppSearchThread;
 import com.google.gson.Gson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
+import static com.crh.wxbase.gsc.constant.AppSearchEnum.*;
 
 @RestController
 @Api(tags = "首页")
@@ -30,7 +48,13 @@ public class IndexController {
     private RedisTemplate<String, String> redisTemplate;
 
     @Autowired
+    private GscAuthorService gscAuthorService;
+
+    @Autowired
     private GscRhythmicService gscRhythmicService;
+
+    @Autowired
+    private GscParagraphsService gscParagraphsService;
 
     @Autowired
     private Gson gson;
@@ -52,6 +76,70 @@ public class IndexController {
             rhythmicInfoDto = gson.fromJson(recommend, RhythmicInfoDto.class);
         }
         return ResponseUtil.getSuccess(rhythmicInfoDto);
+    }
+
+
+    @ApiOperation("究极无敌牛逼搜索")
+    @PostMapping("/search")
+    public Object search(@RequestBody SearchRhythmicReq searchRhythmicReq) throws InterruptedException {
+        AppSearchEnum appSearchEnum = AppSearchEnum.getEnumByCode(searchRhythmicReq.getSearchType());
+        if (Objects.isNull(appSearchEnum)) {
+            return new PageableItemsDto(ResponseCodeEnum.FAIL_INDEX_NULL_SEARCHTYPE);
+        }
+        switch (appSearchEnum) {
+            case AUTHOR:
+                return gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
+            case RHYTHMIC:
+                return gscRhythmicService.queryAuthorToAppSearch(searchRhythmicReq);
+            case PARAGRAPHS:
+                return gscParagraphsService.queryAuthorToAppSearch(searchRhythmicReq);
+            case ALL:
+                return searchAllToThread(searchRhythmicReq);
+            default:
+                return new PageableItemsDto(ResponseCodeEnum.FAIL_INDEX_NULL_SEARCHTYPE);
+        }
+    }
+
+
+    private SearchPageableItemsRes searchAllToThread(SearchRhythmicReq searchRhythmicReq) throws InterruptedException {
+        CountDownLatch countDownLatch = new CountDownLatch(3);
+        Map<String, ItemsDto> pageableItemMap = new HashMap<>();
+        new Thread(){
+            @Override
+            public void run() {
+                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscParagraphsService.queryAuthorToAppSearch(searchRhythmicReq);
+                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
+                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
+                pageableItemMap.put("paragraphs", itemsDto);
+                countDownLatch.countDown();
+            }
+        }.start();
+        new Thread(){
+            @Override
+            public void run() {
+                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscRhythmicService.queryAuthorToAppSearch(searchRhythmicReq);
+                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
+                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
+                pageableItemMap.put("rhythmic", itemsDto);
+                countDownLatch.countDown();
+            }
+        }.start();
+        new Thread(){
+            @Override
+            public void run() {
+                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
+                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
+                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
+                pageableItemMap.put("author", itemsDto);
+                countDownLatch.countDown();
+            }
+        }.start();
+        countDownLatch.await();
+        SearchPageableItemsRes searchPageableItemsRes = new SearchPageableItemsRes();
+        searchPageableItemsRes.setCode(ResponseCodeEnum.SUCCESS.getCode());
+        searchPageableItemsRes.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+        searchPageableItemsRes.setPageableItemMap(pageableItemMap);
+        return searchPageableItemsRes;
     }
 
 }

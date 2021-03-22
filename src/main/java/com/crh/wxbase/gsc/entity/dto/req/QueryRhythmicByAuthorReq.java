@@ -8,7 +8,7 @@ import lombok.Data;
  * @date 2021-03-04 15:40
  */
 @Data
-public class QueryRhythmicByAuthor {
+public class QueryRhythmicByAuthorReq {
 
     @ApiModelProperty("页码")
     private Integer page;

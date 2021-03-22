@@ -1,10 +1,13 @@
-package com.crh.wxbase.common.entity.page;
+package com.crh.wxbase.gsc.entity.dto.res;
 
 import com.crh.wxbase.common.constant.ResponseCodeEnum;
+import com.crh.wxbase.common.entity.page.ItemsDto;
+import com.crh.wxbase.common.entity.page.PageDto;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author rory.chen
@@ -12,15 +15,12 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
-public class PageableItemsDto<T> extends ItemsDto<T>{
+public class SearchPageableItemsRes<T> {
 
     private Integer code;
 
     private String msg;
 
-    public PageableItemsDto(ResponseCodeEnum responseCodeEnum){
-        this.code = responseCodeEnum.getCode();
-        this.msg = responseCodeEnum.getMsg();
-    }
+    private Map<String, ItemsDto<T>> pageableItemMap;
 
 }
