@@ -21,6 +21,6 @@ public class SearchPageableItemsRes<T> {
 
     private String msg;
 
-    private Map<String, ItemsDto<T>> pageableItemMap;
+    private Map pageableItemMap;
 
 }

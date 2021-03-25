@@ -15,10 +15,14 @@ import com.crh.wxbase.gsc.entity.dto.res.SearchRhythmicRes;
 import com.crh.wxbase.gsc.service.GscAuthorService;
 import com.crh.wxbase.gsc.service.GscParagraphsService;
 import com.crh.wxbase.gsc.service.GscRhythmicService;
-import com.crh.wxbase.gsc.thread.AppSearchThread;
+import com.crh.wxbase.gsc.thread.AppSearchAuthorThread;
+import com.crh.wxbase.gsc.thread.AppSearchParagraphsThread;
+import com.crh.wxbase.gsc.thread.AppSearchRhythmicThread;
 import com.google.gson.Gson;
+import io.netty.util.concurrent.DefaultThreadFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,15 +37,12 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-import static com.crh.wxbase.gsc.constant.AppSearchEnum.*;
+import java.util.concurrent.*;
 
 @RestController
 @Api(tags = "首页")
 @RequestMapping("/index")
+@Slf4j
 public class IndexController {
 
     @Autowired
@@ -101,40 +102,22 @@ public class IndexController {
     }
 
 
-    private SearchPageableItemsRes searchAllToThread(SearchRhythmicReq searchRhythmicReq) throws InterruptedException {
+    private SearchPageableItemsRes searchAllToThread(SearchRhythmicReq searchRhythmicReq) {
         CountDownLatch countDownLatch = new CountDownLatch(3);
         Map<String, ItemsDto> pageableItemMap = new HashMap<>();
-        new Thread(){
-            @Override
-            public void run() {
-                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscParagraphsService.queryAuthorToAppSearch(searchRhythmicReq);
-                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-                pageableItemMap.put("paragraphs", itemsDto);
-                countDownLatch.countDown();
-            }
-        }.start();
-        new Thread(){
-            @Override
-            public void run() {
-                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscRhythmicService.queryAuthorToAppSearch(searchRhythmicReq);
-                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-                pageableItemMap.put("rhythmic", itemsDto);
-                countDownLatch.countDown();
-            }
-        }.start();
-        new Thread(){
-            @Override
-            public void run() {
-                PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
-                ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-                BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-                pageableItemMap.put("author", itemsDto);
-                countDownLatch.countDown();
-            }
-        }.start();
-        countDownLatch.await();
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+
+        try {
+            executorService.execute(new AppSearchParagraphsThread(gscParagraphsService, searchRhythmicReq, pageableItemMap, countDownLatch));
+            executorService.execute(new AppSearchAuthorThread(gscAuthorService, searchRhythmicReq, pageableItemMap, countDownLatch));
+            executorService.execute(new AppSearchRhythmicThread(gscRhythmicService, searchRhythmicReq, pageableItemMap, countDownLatch));
+            countDownLatch.await();
+        } catch (Exception e){
+            log.error("搜索线程执行异常", e);
+        } finally {
+            executorService.shutdown();
+        }
+
         SearchPageableItemsRes searchPageableItemsRes = new SearchPageableItemsRes();
         searchPageableItemsRes.setCode(ResponseCodeEnum.SUCCESS.getCode());
         searchPageableItemsRes.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
