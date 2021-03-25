@@ -37,7 +37,7 @@ public class AppSearchParagraphsThread extends Thread {
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
-        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscParagraphsService.queryAuthorToAppSearch(searchRhythmicReq);
+        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq);
         ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
         BeanUtils.copyProperties(pageableItemsDto, itemsDto);
         pageableItemMap.put("paragraphs", itemsDto);

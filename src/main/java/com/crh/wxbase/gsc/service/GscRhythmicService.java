@@ -140,7 +140,7 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
      * @param searchRhythmicReq
      * @return
      */
-    public PageableItemsDto queryAuthorToAppSearch(SearchRhythmicReq searchRhythmicReq){
+    public PageableItemsDto queryRhythmicToAppSearch(SearchRhythmicReq searchRhythmicReq){
         QueryModel queryModel = new QueryModel();
         queryModel.setPage(searchRhythmicReq.getPage());
         queryModel.setPageSize(searchRhythmicReq.getPageSize());

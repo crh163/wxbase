@@ -91,9 +91,9 @@ public class IndexController {
             case AUTHOR:
                 return gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
             case RHYTHMIC:
-                return gscRhythmicService.queryAuthorToAppSearch(searchRhythmicReq);
+                return gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq);
             case PARAGRAPHS:
-                return gscParagraphsService.queryAuthorToAppSearch(searchRhythmicReq);
+                return gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq);
             case ALL:
                 return searchAllToThread(searchRhythmicReq);
             default:

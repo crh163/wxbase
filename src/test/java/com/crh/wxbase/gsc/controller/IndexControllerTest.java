@@ -33,9 +33,9 @@ public class IndexControllerTest {
     public void testSearch() throws InterruptedException {
         SearchRhythmicReq searchRhythmicReq = new SearchRhythmicReq();
         searchRhythmicReq.setPage(1);
-        searchRhythmicReq.setPageSize(5);
-        searchRhythmicReq.setSearchType(1);
-        searchRhythmicReq.setSearchText("李");
+        searchRhythmicReq.setPageSize(10);
+        searchRhythmicReq.setSearchType(0);
+        searchRhythmicReq.setSearchText("蓬");
         log.info(new Gson().toJson(indexController.search(searchRhythmicReq)));
     }
 

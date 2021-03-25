@@ -40,13 +40,15 @@ public class GscParagraphsService extends BaseService<GscParagraphsMapper, GscPa
      * @param searchRhythmicReq
      * @return
      */
-    public PageableItemsDto queryAuthorToAppSearch(SearchRhythmicReq searchRhythmicReq){
+    public PageableItemsDto queryParagraphsToAppSearch(SearchRhythmicReq searchRhythmicReq) {
         QueryModel queryModel = new QueryModel();
         queryModel.setPage(searchRhythmicReq.getPage());
         queryModel.setPageSize(searchRhythmicReq.getPageSize());
-        PageableItemsDto<GscParagraphs> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscParagraphs>()
-                .like(ColumnConsts.TEXT, searchRhythmicReq.getSearchText()));
-        if(CollectionUtils.isEmpty(itemsDto.getItems())) {
+        QueryWrapper queryWrapper = new QueryWrapper<GscParagraphs>()
+                    .last(" where MATCH (text) AGAINST ('" + searchRhythmicReq.getSearchText()
+                            + "' IN NATURAL LANGUAGE MODE)");
+        PageableItemsDto<GscParagraphs> itemsDto = selectPageSpecial(queryModel, queryWrapper);
+        if (CollectionUtils.isEmpty(itemsDto.getItems())) {
             return itemsDto;
         }
         PageableItemsDto<SearchRhythmicRes> poetryItemsDto = new PageableItemsDto<>();
@@ -56,7 +58,7 @@ public class GscParagraphsService extends BaseService<GscParagraphsMapper, GscPa
         Set<Long> rhyIds = itemsDto.getItems().stream().map(GscParagraphs::getRhythmicId).collect(Collectors.toSet());
         Map<Long, String> rhythmicMap = gscRhythmicMapper.selectBatchIds(rhyIds)
                 .stream().collect(Collectors.toMap(GscRhythmic::getId, GscRhythmic::getRhythmic));
-        for(GscParagraphs paragraphs : itemsDto.getItems()){
+        for (GscParagraphs paragraphs : itemsDto.getItems()) {
             SearchRhythmicRes searchRhythmicRes = new SearchRhythmicRes();
             searchRhythmicRes.setParagraphsText(paragraphs.getText());
             searchRhythmicRes.setRhythmicId(paragraphs.getRhythmicId());

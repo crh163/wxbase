@@ -38,7 +38,7 @@ public class AppSearchRhythmicThread extends Thread {
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
-        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscRhythmicService.queryAuthorToAppSearch(searchRhythmicReq);
+        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq);
         ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
         BeanUtils.copyProperties(pageableItemsDto, itemsDto);
         pageableItemMap.put("rhythmic", itemsDto);
