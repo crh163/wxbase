@@ -14,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
@@ -31,17 +32,15 @@ public class AppSearchAuthorThread extends Thread {
 
     private SearchRhythmicReq searchRhythmicReq;
 
-    private Map<String, ItemsDto> pageableItemMap;
+    private Map<String, List<SearchRhythmicRes>> pageableItemMap;
 
     private CountDownLatch countDownLatch;
 
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
-        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
-        ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-        BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-        pageableItemMap.put("author", itemsDto);
+        List<SearchRhythmicRes> item = gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
+        pageableItemMap.put("author", item);
         countDownLatch.countDown();
         log.info("AppSearchAuthorThread end 耗时 :{}毫秒 ", (System.currentTimeMillis() - startTime));
     }

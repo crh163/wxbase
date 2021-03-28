@@ -23,4 +23,9 @@ public class SearchPageableItemsRes<T> {
 
     private Map pageableItemMap;
 
+    public SearchPageableItemsRes(ResponseCodeEnum responseCodeEnum){
+        this.code = responseCodeEnum.getCode();
+        this.msg = responseCodeEnum.getMsg();
+    }
+
 }

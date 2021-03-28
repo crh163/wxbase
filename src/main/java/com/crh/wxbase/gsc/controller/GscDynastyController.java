@@ -3,11 +3,13 @@ package com.crh.wxbase.gsc.controller;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.gsc.entity.dto.GscDynastyPoetryDto;
+import com.crh.wxbase.gsc.entity.dto.req.QueryAllDynastyReq;
 import com.crh.wxbase.gsc.service.GscDynastyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,8 +29,8 @@ public class GscDynastyController {
 
     @ApiOperation("查询所有朝代信息")
     @PostMapping("queryAllDynasty")
-    public Response queryAllDynasty(Integer isQueryAuthor) {
-        List<GscDynastyPoetryDto> gscDynastyPoetryDtos = gscDynastyService.queryAllDynasty(isQueryAuthor);
+    public Response queryAllDynasty(@RequestBody QueryAllDynastyReq queryAllDynastyReq) {
+        List<GscDynastyPoetryDto> gscDynastyPoetryDtos = gscDynastyService.queryAllDynasty(queryAllDynastyReq);
         return ResponseUtil.getSuccess(gscDynastyPoetryDtos);
     }
 

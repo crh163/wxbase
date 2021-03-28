@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
@@ -30,17 +31,15 @@ public class AppSearchParagraphsThread extends Thread {
 
     private SearchRhythmicReq searchRhythmicReq;
 
-    private Map<String, ItemsDto> pageableItemMap;
+    private Map<String, List<SearchRhythmicRes>> pageableItemMap;
 
     private CountDownLatch countDownLatch;
 
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
-        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq);
-        ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-        BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-        pageableItemMap.put("paragraphs", itemsDto);
+        List<SearchRhythmicRes> items = gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq);
+        pageableItemMap.put("paragraphs", items);
         countDownLatch.countDown();
         log.info("AppSearchParagraphsThread end 耗时 :{}毫秒 ", (System.currentTimeMillis() - startTime));
     }

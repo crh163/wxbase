@@ -2,18 +2,13 @@ package com.crh.wxbase.gsc.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.common.constant.ColumnConsts;
-import com.crh.wxbase.common.entity.QueryModel;
-import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.service.BaseService;
-import com.crh.wxbase.gsc.entity.db.GscAuthor;
-import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.entity.db.GscParagraphs;
 import com.crh.wxbase.gsc.entity.db.GscRhythmic;
 import com.crh.wxbase.gsc.entity.dto.req.SearchRhythmicReq;
 import com.crh.wxbase.gsc.entity.dto.res.SearchRhythmicRes;
 import com.crh.wxbase.gsc.mapper.GscParagraphsMapper;
 import com.crh.wxbase.gsc.mapper.GscRhythmicMapper;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -40,33 +35,33 @@ public class GscParagraphsService extends BaseService<GscParagraphsMapper, GscPa
      * @param searchRhythmicReq
      * @return
      */
-    public PageableItemsDto queryParagraphsToAppSearch(SearchRhythmicReq searchRhythmicReq) {
-        QueryModel queryModel = new QueryModel();
-        queryModel.setPage(searchRhythmicReq.getPage());
-        queryModel.setPageSize(searchRhythmicReq.getPageSize());
-        QueryWrapper queryWrapper = new QueryWrapper<GscParagraphs>()
-                    .last(" where MATCH (text) AGAINST ('" + searchRhythmicReq.getSearchText()
-                            + "' IN NATURAL LANGUAGE MODE)");
-        PageableItemsDto<GscParagraphs> itemsDto = selectPageSpecial(queryModel, queryWrapper);
-        if (CollectionUtils.isEmpty(itemsDto.getItems())) {
-            return itemsDto;
+    public List<SearchRhythmicRes> queryParagraphsToAppSearch(SearchRhythmicReq searchRhythmicReq) {
+        int page = searchRhythmicReq.getPage() == 0 ? 1 : searchRhythmicReq.getPage();
+        int pageSize = (page - 1) * searchRhythmicReq.getPageSize();
+        QueryWrapper<GscParagraphs> wrapper = new QueryWrapper<>();
+        if (searchRhythmicReq.getSearchText().length() > 1) {
+            wrapper.last(" where MATCH (text) AGAINST ('" + searchRhythmicReq.getSearchText()
+                    + "' IN NATURAL LANGUAGE MODE)");
+        } else {
+            wrapper.like(ColumnConsts.TEXT, searchRhythmicReq.getSearchText());
         }
-        PageableItemsDto<SearchRhythmicRes> poetryItemsDto = new PageableItemsDto<>();
-        BeanUtils.copyProperties(itemsDto, poetryItemsDto);
+        wrapper.last(" LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize());
+        List<GscParagraphs> list = list(wrapper);
         List<SearchRhythmicRes> searchRhythmicList = new ArrayList<>();
-
-        Set<Long> rhyIds = itemsDto.getItems().stream().map(GscParagraphs::getRhythmicId).collect(Collectors.toSet());
+        if(CollectionUtils.isEmpty(list)){
+            return searchRhythmicList;
+        }
+        Set<Long> rhyIds = list.stream().map(GscParagraphs::getRhythmicId).collect(Collectors.toSet());
         Map<Long, String> rhythmicMap = gscRhythmicMapper.selectBatchIds(rhyIds)
                 .stream().collect(Collectors.toMap(GscRhythmic::getId, GscRhythmic::getRhythmic));
-        for (GscParagraphs paragraphs : itemsDto.getItems()) {
+        for (GscParagraphs paragraphs : list) {
             SearchRhythmicRes searchRhythmicRes = new SearchRhythmicRes();
             searchRhythmicRes.setParagraphsText(paragraphs.getText());
             searchRhythmicRes.setRhythmicId(paragraphs.getRhythmicId());
             searchRhythmicRes.setRhythmicName(rhythmicMap.get(paragraphs.getRhythmicId()));
             searchRhythmicList.add(searchRhythmicRes);
         }
-        poetryItemsDto.setItems(searchRhythmicList);
-        return poetryItemsDto;
+        return searchRhythmicList;
     }
 
 

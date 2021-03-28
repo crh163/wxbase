@@ -13,7 +13,7 @@
             (
             SELECT  a.id authorId,a.name authorName,a.dynasty_id dynastyId,count(*) poetryNumber
             FROM (
-            SELECT * FROM gsc_author WHERE dynasty_id=#{item} limit 10
+            SELECT * FROM gsc_author WHERE dynasty_id=#{item} limit ${queryAuthorNumber}
             ) a
             LEFT JOIN gsc_rhythmic r ON a.id = r.author_id
             GROUP BY a.id

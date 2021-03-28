@@ -35,6 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.*;
@@ -89,22 +90,31 @@ public class IndexController {
         }
         switch (appSearchEnum) {
             case AUTHOR:
-                return gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq);
+                return buildSearchRes(gscAuthorService.queryAuthorToAppSearch(searchRhythmicReq), "author");
             case RHYTHMIC:
-                return gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq);
+                return buildSearchRes(gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq), "rhythmic");
             case PARAGRAPHS:
-                return gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq);
+                return buildSearchRes(gscParagraphsService.queryParagraphsToAppSearch(searchRhythmicReq), "paragraphs");
             case ALL:
                 return searchAllToThread(searchRhythmicReq);
             default:
-                return new PageableItemsDto(ResponseCodeEnum.FAIL_INDEX_NULL_SEARCHTYPE);
+                return new SearchPageableItemsRes(ResponseCodeEnum.FAIL_INDEX_NULL_SEARCHTYPE);
         }
     }
 
+    private SearchPageableItemsRes buildSearchRes(List<SearchRhythmicRes> searchList, String key){
+        SearchPageableItemsRes searchPageableItemsRes = new SearchPageableItemsRes();
+        searchPageableItemsRes.setCode(ResponseCodeEnum.SUCCESS.getCode());
+        searchPageableItemsRes.setMsg(ResponseCodeEnum.SUCCESS.getMsg());
+        Map<String, List<SearchRhythmicRes>> pageableItemMap = new HashMap<>();
+        pageableItemMap.put(key, searchList);
+        searchPageableItemsRes.setPageableItemMap(pageableItemMap);
+        return searchPageableItemsRes;
+    }
 
     private SearchPageableItemsRes searchAllToThread(SearchRhythmicReq searchRhythmicReq) {
         CountDownLatch countDownLatch = new CountDownLatch(3);
-        Map<String, ItemsDto> pageableItemMap = new HashMap<>();
+        Map<String, List<SearchRhythmicRes>> pageableItemMap = new HashMap<>();
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 
         try {

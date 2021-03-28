@@ -73,30 +73,22 @@ public class GscAuthorService extends BaseService<GscAuthorMapper, GscAuthor> {
      * @param searchRhythmicReq
      * @return
      */
-    public PageableItemsDto queryAuthorToAppSearch(SearchRhythmicReq searchRhythmicReq){
-        QueryModel queryModel = new QueryModel();
-        queryModel.setPage(searchRhythmicReq.getPage());
-        queryModel.setPageSize(searchRhythmicReq.getPageSize());
-        PageableItemsDto<GscAuthor> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscAuthor>()
-                .like(ColumnConsts.NAME, searchRhythmicReq.getSearchText()));
-        if(CollectionUtils.isEmpty(itemsDto.getItems())) {
-            return itemsDto;
-        }
-        PageableItemsDto<SearchRhythmicRes> poetryItemsDto = new PageableItemsDto<>();
-        BeanUtils.copyProperties(itemsDto, poetryItemsDto);
+    public List<SearchRhythmicRes> queryAuthorToAppSearch(SearchRhythmicReq searchRhythmicReq){
+        int page = searchRhythmicReq.getPage() == 0 ? 1 : searchRhythmicReq.getPage();
+        int pageSize = (page - 1) * searchRhythmicReq.getPageSize();
+        List<GscAuthor> list = list(new QueryWrapper<GscAuthor>().like(ColumnConsts.NAME, searchRhythmicReq.getSearchText())
+                .last(" LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize()));
         List<SearchRhythmicRes> searchRhythmicList = new ArrayList<>();
-
         Map<Long, String> dynastyMap = gscDynastyMapper.selectList(new QueryWrapper<>())
                 .stream().collect(Collectors.toMap(GscDynasty::getId, GscDynasty::getName));
-        for(GscAuthor author : itemsDto.getItems()){
+        for(GscAuthor author : list){
             SearchRhythmicRes searchRhythmicRes = new SearchRhythmicRes();
             searchRhythmicRes.setAuthorId(author.getId());
             searchRhythmicRes.setAuthorName(author.getName());
             searchRhythmicRes.setDynastyName(dynastyMap.get(author.getDynastyId()));
             searchRhythmicList.add(searchRhythmicRes);
         }
-        poetryItemsDto.setItems(searchRhythmicList);
-        return poetryItemsDto;
+        return searchRhythmicList;
     }
 
 }

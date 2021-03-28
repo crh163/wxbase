@@ -24,6 +24,6 @@ public class GscDynastyServiceImpTest {
 
     @Test
     public void test() {
-        gscDynastyService.queryAllDynasty(1);
+//        gscDynastyService.queryAllDynasty(1);
     }
 }

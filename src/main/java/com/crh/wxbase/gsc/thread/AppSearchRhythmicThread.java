@@ -14,6 +14,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
@@ -31,17 +32,15 @@ public class AppSearchRhythmicThread extends Thread {
 
     private SearchRhythmicReq searchRhythmicReq;
 
-    private Map<String, ItemsDto> pageableItemMap;
+    private Map<String, List<SearchRhythmicRes>> pageableItemMap;
 
     private CountDownLatch countDownLatch;
 
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
-        PageableItemsDto<SearchRhythmicRes> pageableItemsDto = gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq);
-        ItemsDto<SearchRhythmicRes> itemsDto = new ItemsDto<>();
-        BeanUtils.copyProperties(pageableItemsDto, itemsDto);
-        pageableItemMap.put("rhythmic", itemsDto);
+        List<SearchRhythmicRes> items = gscRhythmicService.queryRhythmicToAppSearch(searchRhythmicReq);
+        pageableItemMap.put("rhythmic", items);
         countDownLatch.countDown();
         log.info("AppSearchRhythmicThread end 耗时 :{}毫秒 ", (System.currentTimeMillis() - startTime));
     }

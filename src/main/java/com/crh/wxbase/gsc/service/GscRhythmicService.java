@@ -140,31 +140,26 @@ public class GscRhythmicService extends BaseService<GscRhythmicMapper, GscRhythm
      * @param searchRhythmicReq
      * @return
      */
-    public PageableItemsDto queryRhythmicToAppSearch(SearchRhythmicReq searchRhythmicReq){
-        QueryModel queryModel = new QueryModel();
-        queryModel.setPage(searchRhythmicReq.getPage());
-        queryModel.setPageSize(searchRhythmicReq.getPageSize());
-        PageableItemsDto<GscRhythmic> itemsDto = selectPageSpecial(queryModel, new QueryWrapper<GscRhythmic>()
-                .like(ColumnConsts.RHYTHMIC, searchRhythmicReq.getSearchText()));
-        if(CollectionUtils.isEmpty(itemsDto.getItems())) {
-            return itemsDto;
-        }
-        PageableItemsDto<SearchRhythmicRes> poetryItemsDto = new PageableItemsDto<>();
-        BeanUtils.copyProperties(itemsDto, poetryItemsDto);
+    public List<SearchRhythmicRes> queryRhythmicToAppSearch(SearchRhythmicReq searchRhythmicReq){
+        int page = searchRhythmicReq.getPage() == 0 ? 1 : searchRhythmicReq.getPage();
+        int pageSize = (page - 1) * searchRhythmicReq.getPageSize();
+        List<GscRhythmic> list = list(new QueryWrapper<GscRhythmic>().like(ColumnConsts.RHYTHMIC, searchRhythmicReq.getSearchText())
+                .last(" LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize()));
         List<SearchRhythmicRes> searchRhythmicList = new ArrayList<>();
-
-        Set<Long> authorIds = itemsDto.getItems().stream().map(GscRhythmic::getAuthorId).collect(Collectors.toSet());
+        if(CollectionUtils.isEmpty(list)){
+            return searchRhythmicList;
+        }
+        Set<Long> authorIds = list.stream().map(GscRhythmic::getAuthorId).collect(Collectors.toSet());
         Map<Long, String> authorMap = gscAuthorMapper.selectBatchIds(authorIds)
                 .stream().collect(Collectors.toMap(GscAuthor::getId, GscAuthor::getName));
-        for(GscRhythmic rhythmic : itemsDto.getItems()){
+        for(GscRhythmic rhythmic : list){
             SearchRhythmicRes searchRhythmicRes = new SearchRhythmicRes();
             searchRhythmicRes.setRhythmicId(rhythmic.getId());
             searchRhythmicRes.setRhythmicName(rhythmic.getRhythmic());
             searchRhythmicRes.setAuthorName(authorMap.get(rhythmic.getAuthorId()));
             searchRhythmicList.add(searchRhythmicRes);
         }
-        poetryItemsDto.setItems(searchRhythmicList);
-        return poetryItemsDto;
+        return searchRhythmicList;
     }
 
 

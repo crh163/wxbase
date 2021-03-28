@@ -19,7 +19,7 @@ public interface GscAuthorMapper extends BaseMapper<GscAuthor> {
      * @param dynIds
      * @return
      */
-    List<GscAuthorPoetry> selectDynastyAuthorPoetry(@Param("dynIds") List<Long> dynIds);
+    List<GscAuthorPoetry> selectDynastyAuthorPoetry(@Param("dynIds") List<Long> dynIds, @Param("queryAuthorNumber") Integer queryAuthorNumber);
 
     /**
      * 根据朝代查询所有诗人对应的诗句

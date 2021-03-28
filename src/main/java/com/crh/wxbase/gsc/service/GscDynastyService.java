@@ -6,6 +6,7 @@ import com.crh.wxbase.gsc.entity.dao.GscAuthorPoetry;
 import com.crh.wxbase.gsc.entity.db.GscDynasty;
 import com.crh.wxbase.gsc.entity.dto.GscDynastyPoetryDto;
 import com.crh.wxbase.gsc.entity.dto.pojo.AuthorPoetry;
+import com.crh.wxbase.gsc.entity.dto.req.QueryAllDynastyReq;
 import com.crh.wxbase.gsc.mapper.GscAuthorMapper;
 import com.crh.wxbase.gsc.mapper.GscDynastyMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,11 @@ public class GscDynastyService extends BaseService<GscDynastyMapper, GscDynasty>
      *
      * @return
      */
-    public List<GscDynastyPoetryDto> queryAllDynasty(Integer isQueryAuthor) {
+    public List<GscDynastyPoetryDto> queryAllDynasty(QueryAllDynastyReq queryAllDynastyReq) {
         List<GscDynasty> gscDynasties = list();
         List<GscDynastyPoetryDto> gscDynastyPoetryDtos = new ArrayList<>();
-        if (!YesOrNoConsts.YES_INT.equals(isQueryAuthor)) {
-            return queryAuthorByDynasty(gscDynasties);
+        if (!YesOrNoConsts.YES_INT.equals(queryAllDynastyReq.getIsQueryAuthor())) {
+            return queryAuthorByDynasty(gscDynasties, queryAllDynastyReq.getQueryAuthorNumber());
         } else {
             for (GscDynasty gscDynasty : gscDynasties) {
                 GscDynastyPoetryDto gscDynastyPoetryDto = new GscDynastyPoetryDto();
@@ -51,12 +52,16 @@ public class GscDynastyService extends BaseService<GscDynastyMapper, GscDynasty>
      * 根据朝代集合查询对应诗人信息
      *
      * @param gscDynasties
+     * @param queryAuthorNumber
      * @return
      */
-    private List<GscDynastyPoetryDto> queryAuthorByDynasty(List<GscDynasty> gscDynasties) {
+    private List<GscDynastyPoetryDto> queryAuthorByDynasty(List<GscDynasty> gscDynasties, Integer queryAuthorNumber) {
+        if(queryAuthorNumber==null){
+            queryAuthorNumber = 10;
+        }
         List<GscDynastyPoetryDto> gscDynastyPoetryDtos = new ArrayList<>();
         List<Long> dynIds = gscDynasties.stream().map(GscDynasty::getId).collect(Collectors.toList());
-        List<GscAuthorPoetry> authorPoetrys = gscAuthorMapper.selectDynastyAuthorPoetry(dynIds);
+        List<GscAuthorPoetry> authorPoetrys = gscAuthorMapper.selectDynastyAuthorPoetry(dynIds, queryAuthorNumber);
         for (GscDynasty gscDynasty : gscDynasties) {
             List<AuthorPoetry> authorPoetries = new ArrayList<>();
             for (GscAuthorPoetry gscAuthorPoetry : authorPoetrys) {
