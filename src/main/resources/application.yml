@@ -36,3 +36,9 @@ mybatis-plus:
       logic-not-delete-value: 1
       db-type: mysql
     refresh: false
+
+wechat:
+  loginUrl: https://api.weixin.qq.com/sns/jscode2session
+  appid: wxad5128056ba6d81f
+  secret: b054c08e8741b970c798310651ae722c
+  grantType: authorization_code

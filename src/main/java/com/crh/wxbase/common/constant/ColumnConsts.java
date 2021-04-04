@@ -22,4 +22,8 @@ public class ColumnConsts {
 
     public static final String RHYTHMIC = "rhythmic";
 
+    public static final String OPENID = "open_id";
+
+    public static final String SESSION_KEY = "session_key";
+
 }

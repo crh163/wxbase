@@ -34,8 +34,8 @@ public class IndexControllerTest {
         SearchRhythmicReq searchRhythmicReq = new SearchRhythmicReq();
         searchRhythmicReq.setPage(1);
         searchRhythmicReq.setPageSize(10);
-        searchRhythmicReq.setSearchType(0);
-        searchRhythmicReq.setSearchText("蓬");
+        searchRhythmicReq.setSearchType(3);
+        searchRhythmicReq.setSearchText("李子奇");
         log.info(new Gson().toJson(indexController.search(searchRhythmicReq)));
     }
 

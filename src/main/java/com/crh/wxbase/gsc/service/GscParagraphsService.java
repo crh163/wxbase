@@ -41,11 +41,12 @@ public class GscParagraphsService extends BaseService<GscParagraphsMapper, GscPa
         QueryWrapper<GscParagraphs> wrapper = new QueryWrapper<>();
         if (searchRhythmicReq.getSearchText().length() > 1) {
             wrapper.last(" where MATCH (text) AGAINST ('" + searchRhythmicReq.getSearchText()
-                    + "' IN NATURAL LANGUAGE MODE)");
+                    + "' IN NATURAL LANGUAGE MODE)"
+                    + " LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize());
         } else {
-            wrapper.like(ColumnConsts.TEXT, searchRhythmicReq.getSearchText());
+            wrapper.like(ColumnConsts.TEXT, searchRhythmicReq.getSearchText())
+                    .last(" LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize());;
         }
-        wrapper.last(" LIMIT " + pageSize + "," + searchRhythmicReq.getPageSize());
         List<GscParagraphs> list = list(wrapper);
         List<SearchRhythmicRes> searchRhythmicList = new ArrayList<>();
         if(CollectionUtils.isEmpty(list)){
