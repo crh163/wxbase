@@ -1,0 +1,96 @@
+package com.crh.wxbase.system.controller;
+
+import com.crh.wxbase.common.entity.resp.Response;
+import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.system.properties.WechatAuthProperties;
+import com.crh.wxbase.system.service.SysWxUserService;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+@Slf4j
+@RestController
+@Api(tags = "微信用户")
+@RequestMapping("/syswxuser")
+public class SysWxUserController {
+
+    @Autowired
+    private SysWxUserService sysWxUserService;
+
+    @Autowired
+    private WechatAuthProperties wechatAuthProperties;
+
+    @ApiOperation("微信用户登录")
+    @PostMapping("/login")
+    public Response login(@RequestBody String code) {
+        Map<String, String> sessionMap = loginWxSession(code);
+        if(Objects.isNull(sessionMap) || Objects.isNull(sessionMap.get("openid"))){
+            return ResponseUtil.getFail(sessionMap.get("errmsg"));
+        }
+        String token = sysWxUserService.handleWxSessionInfo(sessionMap);
+        return ResponseUtil.getSuccess(token);
+    }
+
+    /**
+     * 微信程序登录
+     * @param code
+     * @return
+     */
+    private Map<String, String> loginWxSession(String code) {
+        log.info("loginWxSession 微信用户登录code : {}", code);
+        String url = wechatAuthProperties.getLoginUrl()
+                + "?appid=" + wechatAuthProperties.getAppid()
+                + "&secret=" + wechatAuthProperties.getSecret()
+                + "&js_code=" + code
+                + "&grant_type=" + wechatAuthProperties.getGrantType();
+        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+        HttpGet httpGet = new HttpGet(url);
+
+        CloseableHttpResponse response = null;
+        try {
+            response = httpClient.execute(httpGet);
+            HttpEntity responseEntity = response.getEntity();
+            if (responseEntity != null) {
+                String json = EntityUtils.toString(responseEntity);
+                log.info("loginWxSession 响应内容为:" + json);
+                return new Gson().fromJson(json, new TypeToken<Map<String, String>>() {
+                }.getType());
+            }
+        } catch (Exception e) {
+            log.error("微信授权登录失败！！！", e);
+        } finally {
+            try {
+                if (httpClient != null) {
+                    httpClient.close();
+                }
+                if (response != null) {
+                    response.close();
+                }
+            } catch (Exception e) {
+                log.error("资源释放失败！！！", e);
+            }
+        }
+        return new HashMap<>();
+    }
+
+
+}
