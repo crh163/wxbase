@@ -2,6 +2,7 @@ package com.crh.wxbase.system.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.common.constant.ColumnConsts;
+import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.constant.EncryptConsts;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.common.utils.ArithmeticUtil;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author rory.chen
@@ -35,8 +37,8 @@ public class SysWxUserService extends BaseService<SysWxUserMapper, SysWxUser> {
      * @return token
      */
     public String handleWxSessionInfo(Map<String, String> sessionMap) {
-        String openId = sessionMap.get("openid");
-        String sessionKey = sessionMap.get("session_key");
+        String openId = sessionMap.get(CommonConsts.OPENID);
+        String sessionKey = sessionMap.get(CommonConsts.SESSION_KEY);
         String token = ArithmeticUtil.encryptAes(openId + sessionKey,
                 EncryptConsts.AES_KEY);
         //查询是否第一次登录
@@ -53,7 +55,7 @@ public class SysWxUserService extends BaseService<SysWxUserMapper, SysWxUser> {
         }
         //token 登录信息保存
         ValueOperations<String, String> opsForValue = redisTemplate.opsForValue();
-        opsForValue.set(token, new Gson().toJson(sysWxUser));
+        opsForValue.set(token, new Gson().toJson(sysWxUser), 30, TimeUnit.DAYS);
         return token;
     }
 

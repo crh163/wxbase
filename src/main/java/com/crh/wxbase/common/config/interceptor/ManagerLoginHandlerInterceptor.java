@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
  * @date 2021-02-24 17:44
  */
 @Slf4j
-public class LoginHandlerInterceptor implements HandlerInterceptor {
+public class ManagerLoginHandlerInterceptor implements HandlerInterceptor {
 
     /**
-     * 登录拦截器
+     * 管理后台登录拦截器
      *
      * @param request
      * @param response

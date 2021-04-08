@@ -14,6 +14,8 @@ import java.io.Serializable;
 @Accessors(chain = true)
 public class SysWxUser extends BaseModel implements Serializable {
 
+    private static final long serialVersionUID = 6809392313564681945L;
+
     @ApiModelProperty("微信openid")
     private String openId;
 

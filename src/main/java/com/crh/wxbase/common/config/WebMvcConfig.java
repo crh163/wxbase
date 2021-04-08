@@ -1,6 +1,7 @@
 package com.crh.wxbase.common.config;
 
-import com.crh.wxbase.common.config.interceptor.LoginHandlerInterceptor;
+import com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor;
+import com.crh.wxbase.common.config.interceptor.ManagerLoginHandlerInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -18,20 +19,24 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginHandlerInterceptor())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/",
-                        "/sysuser/login",
-
-                        //swagger
-                        "/swagger-ui.html",
-                        "/configuration/ui",
-                        "/swagger-resources/**",
-                        "/configuration/security",
-                        "/v2/api-docs",
-                        "/error",
-                        "/csrf",
-                        "/webjars/**",
-                        "/**/favicon.ico");
+        //管理后台拦截器
+        registry.addInterceptor(new ManagerLoginHandlerInterceptor())
+                .addPathPatterns("/manager/**");
+        //小程序拦截器
+        registry.addInterceptor(new ApiLoginHandlerInterceptor())
+                .addPathPatterns("/api/**")
+                .excludePathPatterns("/api/syswxuser/login");
     }
+    /*  swagger excludePathPatterns
+        "/swagger-ui.html",
+        "/configuration/ui",
+        "/swagger-resources/**",
+        "/configuration/security",
+        "/v2/api-docs",
+        "/error",
+        "/csrf",
+        "/webjars/**",
+        "/**-/favicon.ico"
+    */
+
 }

@@ -1,7 +1,11 @@
 package com.crh.wxbase.system.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.crh.wxbase.common.constant.ColumnConsts;
+import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
+import com.crh.wxbase.system.entity.SysWxUser;
 import com.crh.wxbase.system.properties.WechatAuthProperties;
 import com.crh.wxbase.system.service.SysWxUserService;
 import com.google.gson.Gson;
@@ -23,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -30,7 +35,7 @@ import java.util.Objects;
 @Slf4j
 @RestController
 @Api(tags = "微信用户")
-@RequestMapping("/syswxuser")
+@RequestMapping("/api/syswxuser")
 public class SysWxUserController {
 
     @Autowired
@@ -39,15 +44,30 @@ public class SysWxUserController {
     @Autowired
     private WechatAuthProperties wechatAuthProperties;
 
+    @Autowired
+    private HttpServletRequest request;
+
     @ApiOperation("微信用户登录")
     @PostMapping("/login")
     public Response login(@RequestBody String code) {
         Map<String, String> sessionMap = loginWxSession(code);
-        if(Objects.isNull(sessionMap) || Objects.isNull(sessionMap.get("openid"))){
-            return ResponseUtil.getFail(sessionMap.get("errmsg"));
+        if(Objects.isNull(sessionMap) || Objects.isNull(sessionMap.get(CommonConsts.OPENID))){
+            return ResponseUtil.getFail(sessionMap.get(CommonConsts.ERRMSG));
         }
         String token = sysWxUserService.handleWxSessionInfo(sessionMap);
         return ResponseUtil.getSuccess(token);
+    }
+
+    @ApiOperation("上传微信用户信息")
+    @PostMapping("/uploadWxUserInfo")
+    public Response uploadWxUserInfo(@RequestBody SysWxUser sysWxUser){
+        //更新时忽略客户端上传的session
+        sysWxUser.setSessionKey(null);
+        sysWxUser.setToken(null);
+        SysWxUser userInfo = (SysWxUser) request.getAttribute(CommonConsts.USERINFO);
+        sysWxUserService.update(sysWxUser, new QueryWrapper<SysWxUser>()
+                .eq(ColumnConsts.OPENID, userInfo.getOpenId()));
+        return ResponseUtil.getSuccess();
     }
 
     /**

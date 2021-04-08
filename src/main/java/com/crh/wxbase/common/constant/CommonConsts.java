@@ -49,4 +49,19 @@ public class CommonConsts {
      */
     public static final String USERINFO = "userInfo";
 
+    /**
+     *
+     */
+    public static final String OPENID = "openid";
+
+    /**
+     *
+     */
+    public static final String ERRMSG = "errmsg";
+
+    /**
+     *
+     */
+    public static final String SESSION_KEY = "session_key";
+
 }
