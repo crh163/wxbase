@@ -1,12 +1,9 @@
 package com.crh.wxbase.common.config.interceptor;
 
 import com.crh.wxbase.common.constant.CommonConsts;
-import com.crh.wxbase.common.utils.SpringContextUtil;
+import com.crh.wxbase.common.utils.RedisTemplateUtil;
 import com.crh.wxbase.system.entity.SysWxUser;
-import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,11 +28,8 @@ public class ApiLoginHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String token = request.getHeader(CommonConsts.X_ACCESS_TOKEN);
-        RedisTemplate redisTemplate = SpringContextUtil.getBean("redisTemplate", RedisTemplate.class);
-        ValueOperations<String, String> opsForValue = redisTemplate.opsForValue();
-        String userInfo = opsForValue.get(token);
-        if (userInfo != null) {
-            SysWxUser sysWxUser = new Gson().fromJson(userInfo, SysWxUser.class);
+        SysWxUser sysWxUser = RedisTemplateUtil.getRedisString(token, SysWxUser.class);
+        if (sysWxUser != null) {
             request.setAttribute(CommonConsts.USERINFO, sysWxUser);
             return true;
         } else {
