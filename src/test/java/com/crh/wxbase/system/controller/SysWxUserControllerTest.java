@@ -19,8 +19,8 @@ public class SysWxUserControllerTest {
 
     @Test
     public void testQueryToday() {
-        Response response = sysWxUserController.login("091dMYZv3Ice8W2Ixv2w3bbudY0dMYZF");
-        log.info(new Gson().toJson(response));
+//        Response response = sysWxUserController.login("091VN20001gvvL10AB0005fnzF4VN204");
+//        log.info(new Gson().toJson(response));
     }
 
 }

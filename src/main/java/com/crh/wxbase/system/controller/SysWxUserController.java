@@ -3,6 +3,7 @@ package com.crh.wxbase.system.controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.crh.wxbase.common.constant.ColumnConsts;
 import com.crh.wxbase.common.constant.CommonConsts;
+import com.crh.wxbase.common.entity.req.CommonCodeReq;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.system.entity.SysWxUser;
@@ -49,7 +50,8 @@ public class SysWxUserController {
 
     @ApiOperation("微信用户登录")
     @PostMapping("/login")
-    public Response login(@RequestBody String code) {
+    public Response login(@RequestBody CommonCodeReq commonCodeReq) {
+        String code = commonCodeReq.getCode();
         Map<String, String> sessionMap = loginWxSession(code);
         if(Objects.isNull(sessionMap) || Objects.isNull(sessionMap.get(CommonConsts.OPENID))){
             return ResponseUtil.getFail(sessionMap.get(CommonConsts.ERRMSG));

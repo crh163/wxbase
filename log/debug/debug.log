@@ -933,3 +933,37 @@ com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (S
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
 2021-04-08 17:36:33,000 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 14:44:49,564 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-11 14:44:49,662 INFO [main] c.c.w.s.c.SysWxUserControllerTest [StartupInfoLogger.java : 55] Starting SysWxUserControllerTest on USER-20200606SM with PID 1880 (started by Administrator in E:\github\crh-wx\wxbase)
+2021-04-11 14:44:49,668 INFO [main] c.c.w.s.c.SysWxUserControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-11 14:44:56,793 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-11 14:44:56,814 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-11 14:44:57,190 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 252ms. Found 0 Redis repository interfaces.
+2021-04-11 14:45:25,722 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-11 14:45:39,403 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-11 14:45:46,089 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-11 14:45:46,571 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-11 14:45:46,934 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-11 14:45:49,847 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-11 14:45:49,990 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-11 14:45:50,032 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-11 14:45:50,141 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-11 14:45:50,149 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-11 14:45:50,157 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-11 14:45:51,808 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-11 14:45:51,874 INFO [main] c.c.w.s.c.SysWxUserControllerTest [StartupInfoLogger.java : 61] Started SysWxUserControllerTest in 63.8 seconds (JVM running for 70.277)
+2021-04-11 14:45:56,191 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
+2021-04-11 14:45:56,192 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
+2021-04-11 14:45:56,193 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-11 14:45:56,206 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysWxUserController.login
+2021-04-11 14:45:56,221 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : ["091VN20001gvvL10AB0005fnzF4VN204"]
+2021-04-11 14:45:56,333 INFO [main] c.c.w.s.c.SysWxUserController [SysWxUserController.java : 79] loginWxSession 微信用户登录code : 091VN20001gvvL10AB0005fnzF4VN204
+2021-04-11 14:45:59,720 INFO [main] c.c.w.s.c.SysWxUserController [SysWxUserController.java : 94] loginWxSession 响应内容为:{"session_key":"+PV5S0GVfTpnxbTbT518zA==","openid":"oPkYQ5PB0939moD3qTCLQB-vElz8"}
+2021-04-11 14:49:02,169 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-04-11 14:49:03,259 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-04-11 14:49:07,171 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功","data":"0obRfbrvbhqI9flzruAZkxDvJbs6HegtTn9ppawC5aakJeHZDFtn8ORzSDnVkogNwux0gy3qCGZIWH8v72nb8w\u003d\u003d"}
+2021-04-11 14:49:07,172 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :190982毫秒 
+2021-04-11 14:49:07,173 INFO [main] c.c.w.s.c.SysWxUserControllerTest [SysWxUserControllerTest.java : 23] {"code":200,"msg":"请求成功","data":"0obRfbrvbhqI9flzruAZkxDvJbs6HegtTn9ppawC5aakJeHZDFtn8ORzSDnVkogNwux0gy3qCGZIWH8v72nb8w\u003d\u003d"}
+2021-04-11 14:49:07,262 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-11 14:49:07,272 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-04-11 14:49:07,299 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
