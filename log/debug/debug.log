@@ -1,969 +1,128 @@
-2021-04-08 16:30:00,032 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 16:30:05,048 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 16:30:10,056 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 63612 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 16:30:10,056 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 16:30:10,646 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 16:30:10,648 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 16:30:10,674 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
-2021-04-08 16:30:11,247 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 16:30:11,253 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:30:11,253 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 16:30:11,254 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 16:30:11,309 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 16:30:11,309 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1220 ms
-2021-04-08 16:30:12,629 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 16:30:18,019 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 16:30:18,338 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:30:18,350 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 16:30:18,351 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 16:30:18,363 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 16:30:18,388 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 16:30:18,520 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 16:30:18,524 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 16:30:18,527 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 16:30:18,531 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 16:30:18,532 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 16:30:18,534 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 16:30:19,126 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 16:30:19,133 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.436 seconds (JVM running for 34.936)
-2021-04-08 16:42:15,355 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 16:42:15,355 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 16:42:15,366 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 11 ms
-2021-04-08 16:49:29,216 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 16:49:53,361 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 16:49:58,378 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 16:50:03,386 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 63792 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 16:50:03,387 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 16:50:03,981 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 16:50:03,983 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 16:50:04,009 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
-2021-04-08 16:50:04,606 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 16:50:04,613 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:50:04,613 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 16:50:04,613 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 16:50:04,670 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 16:50:04,670 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1250 ms
-2021-04-08 16:50:05,956 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 16:50:11,351 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 16:50:11,671 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:50:11,682 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 16:50:11,683 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 16:50:11,696 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 16:50:11,718 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 16:50:11,851 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 16:50:11,856 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 16:50:11,858 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 16:50:11,862 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 16:50:11,864 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 16:50:11,865 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 16:50:12,476 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 16:50:12,484 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.449 seconds (JVM running for 34.915)
-2021-04-08 16:55:53,178 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 16:55:53,179 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 16:55:53,188 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 9 ms
-2021-04-08 16:56:14,516 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/syswxuser/api/uploadWxUserInfo
-2021-04-08 16:56:14,517 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-04-08 16:56:14,517 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-04-08 16:56:14,518 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysWxUserController.uploadWxUserInfo
-2021-04-08 16:56:14,523 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"openId":"string","sessionKey":"string","token":"string","nickName":"string","avatarUrl":"string","gender":"string","phone":"string","city":"string","province":"string","country":"string","language":"string","id":0}]
-2021-04-08 16:56:14,532 ERROR [http-nio-9081-exec-9] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.crh.wxbase.system.controller.SysWxUserController.uploadWxUserInfo(SysWxUserController.java:69)
-	at com.crh.wxbase.system.controller.SysWxUserController$$FastClassBySpringCGLIB$$2cd60928.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
-	at com.crh.wxbase.common.config.aspect.ControllerLogAspect.doAround(ControllerLogAspect.java:64)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
-	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at com.crh.wxbase.system.controller.SysWxUserController$$EnhancerBySpringCGLIB$$333f6c75.uploadWxUserInfo(<generated>)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 16:57:04,806 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 16:57:28,145 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 16:57:33,159 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 16:57:38,165 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 63841 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 16:57:38,166 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 16:57:38,758 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 16:57:38,760 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 16:57:38,786 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
-2021-04-08 16:57:39,378 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 16:57:39,384 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:57:39,384 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 16:57:39,385 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 16:57:39,440 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 16:57:39,440 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1239 ms
-2021-04-08 16:57:40,711 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 16:57:46,114 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 16:57:46,432 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 16:57:46,444 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 16:57:46,445 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 16:57:46,457 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 16:57:46,479 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 16:57:46,605 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 16:57:46,609 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 16:57:46,612 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 16:57:46,616 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 16:57:46,617 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 16:57:46,619 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 16:57:47,238 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 16:57:47,247 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.423 seconds (JVM running for 34.891)
-2021-04-08 16:58:25,429 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 16:58:25,430 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 16:58:25,440 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 10 ms
-2021-04-08 16:58:32,959 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/syswxuser/api/uploadWxUserInfo
-2021-04-08 16:58:32,959 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
-2021-04-08 16:58:32,959 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-04-08 16:58:32,960 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysWxUserController.uploadWxUserInfo
-2021-04-08 16:58:32,965 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"openId":"string","sessionKey":"string","token":"string","nickName":"string","avatarUrl":"string","gender":"string","phone":"string","city":"string","province":"string","country":"string","language":"string","id":0}]
-2021-04-08 16:58:32,977 ERROR [http-nio-9081-exec-9] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.crh.wxbase.system.controller.SysWxUserController.uploadWxUserInfo(SysWxUserController.java:69)
-	at com.crh.wxbase.system.controller.SysWxUserController$$FastClassBySpringCGLIB$$2cd60928.invoke(<generated>)
-	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
-	at com.crh.wxbase.common.config.aspect.ControllerLogAspect.doAround(ControllerLogAspect.java:64)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
-	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
-	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
-	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
-	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
-	at com.crh.wxbase.system.controller.SysWxUserController$$EnhancerBySpringCGLIB$$333f6c75.uploadWxUserInfo(<generated>)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 16:59:49,922 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:00:13,386 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:00:18,402 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:00:23,410 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 63855 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:00:23,411 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:00:24,004 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:00:24,006 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:00:24,031 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
-2021-04-08 17:00:24,630 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:00:24,636 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:00:24,637 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:00:24,637 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:00:24,692 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:00:24,692 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1248 ms
-2021-04-08 17:00:25,985 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:00:31,389 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:00:31,707 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:00:31,719 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:00:31,720 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:00:31,732 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:00:31,754 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:00:31,882 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:00:31,886 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:00:31,888 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:00:31,892 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:00:31,893 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:00:31,895 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:00:32,509 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:00:32,516 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.459 seconds (JVM running for 34.936)
-2021-04-08 17:03:27,699 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 17:03:27,699 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 17:03:27,708 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 9 ms
-2021-04-08 17:03:42,904 ERROR [http-nio-9081-exec-9] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:40)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:16:35,025 ERROR [http-nio-9081-exec-10] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:40)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:19:01,227 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:19:24,869 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:19:29,881 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:19:34,886 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 63966 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:19:34,886 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:19:35,485 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:19:35,487 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:19:35,512 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
-2021-04-08 17:19:36,111 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:19:36,117 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:19:36,118 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:19:36,118 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:19:36,174 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:19:36,175 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1255 ms
-2021-04-08 17:19:37,463 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:19:42,875 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:19:43,194 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:19:43,206 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:19:43,207 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:19:43,219 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:19:43,242 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:19:43,373 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:19:43,378 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:19:43,381 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:19:43,385 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:19:43,386 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:19:43,388 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:19:44,011 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:19:44,019 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.474 seconds (JVM running for 34.968)
-2021-04-08 17:21:03,575 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 17:21:03,575 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 17:21:03,586 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 11 ms
-2021-04-08 17:21:21,818 ERROR [http-nio-9081-exec-7] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]] with root cause
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
-	at com.fasterxml.jackson.databind.DeserializationContext.wrongTokenException(DeserializationContext.java:1650)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportWrongTokenException(DeserializationContext.java:1400)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._locateTypeId(AsArrayTypeDeserializer.java:141)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:96)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71)
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:710)
-	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:68)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4524)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3570)
-	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
-	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
-	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:61)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:36)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:22:20,857 ERROR [pool-1-thread-1] o.s.s.s.TaskUtils$LoggingErrorHandler [TaskUtils.java : 95] Unexpected error occurred in scheduled task
-org.springframework.dao.QueryTimeoutException: Redis command timed out; nested exception is io.lettuce.core.RedisCommandTimeoutException: Command timed out after 5 second(s)
-	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:70)
-	at org.springframework.data.redis.connection.lettuce.LettuceExceptionConverter.convert(LettuceExceptionConverter.java:41)
-	at org.springframework.data.redis.PassThroughExceptionTranslationStrategy.translate(PassThroughExceptionTranslationStrategy.java:44)
-	at org.springframework.data.redis.FallbackExceptionTranslationStrategy.translate(FallbackExceptionTranslationStrategy.java:42)
-	at org.springframework.data.redis.connection.lettuce.LettuceConnection.convertLettuceAccessException(LettuceConnection.java:273)
-	at org.springframework.data.redis.connection.lettuce.LettuceSetCommands.convertLettuceAccessException(LettuceSetCommands.java:520)
-	at org.springframework.data.redis.connection.lettuce.LettuceSetCommands.sMembers(LettuceSetCommands.java:245)
-	at org.springframework.data.redis.connection.DefaultedRedisConnection.sMembers(DefaultedRedisConnection.java:791)
-	at org.springframework.data.redis.core.DefaultSetOperations.lambda$members$10(DefaultSetOperations.java:214)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultSetOperations.members(DefaultSetOperations.java:214)
-	at org.springframework.data.redis.core.DefaultBoundSetOperations.members(DefaultBoundSetOperations.java:152)
-	at org.springframework.session.data.redis.RedisSessionExpirationPolicy.cleanExpiredSessions(RedisSessionExpirationPolicy.java:129)
-	at org.springframework.session.data.redis.RedisIndexedSessionRepository.cleanupExpiredSessions(RedisIndexedSessionRepository.java:407)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:93)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
-	at java.util.concurrent.FutureTask.run(FutureTask.java)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: io.lettuce.core.RedisCommandTimeoutException: Command timed out after 5 second(s)
-	at io.lettuce.core.ExceptionFactory.createTimeoutException(ExceptionFactory.java:51)
-	at io.lettuce.core.LettuceFutures.awaitOrCancel(LettuceFutures.java:119)
-	at io.lettuce.core.FutureSyncInvocationHandler.handleInvocation(FutureSyncInvocationHandler.java:75)
-	at io.lettuce.core.internal.AbstractInvocationHandler.invoke(AbstractInvocationHandler.java:79)
-	at com.sun.proxy.$Proxy129.smembers(Unknown Source)
-	at org.springframework.data.redis.connection.lettuce.LettuceSetCommands.sMembers(LettuceSetCommands.java:243)
-	... 19 common frames omitted
-2021-04-08 17:22:27,753 ERROR [http-nio-9081-exec-8] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]] with root cause
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
-	at com.fasterxml.jackson.databind.DeserializationContext.wrongTokenException(DeserializationContext.java:1650)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportWrongTokenException(DeserializationContext.java:1400)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._locateTypeId(AsArrayTypeDeserializer.java:141)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:96)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71)
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:710)
-	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:68)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4524)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3570)
-	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
-	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
-	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:61)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:36)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:25:40,726 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:26:04,293 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:26:09,308 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5003 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:26:14,311 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 64023 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:26:14,312 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:26:14,911 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:26:14,912 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:26:14,938 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
-2021-04-08 17:26:15,549 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:26:15,556 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:26:15,556 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:26:15,556 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:26:15,614 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:26:15,615 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1266 ms
-2021-04-08 17:26:16,899 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:26:22,306 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:26:22,657 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:26:22,669 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:26:22,670 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:26:22,682 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:26:22,705 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:26:22,843 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:26:22,848 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:26:22,851 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:26:22,855 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:26:22,856 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:26:22,858 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:26:23,476 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:26:23,483 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.542 seconds (JVM running for 35.031)
-2021-04-08 17:26:24,731 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:29:00,502 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:29:05,521 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5006 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:29:10,528 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 64048 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:29:10,529 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:29:11,114 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:29:11,116 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:29:11,141 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
-2021-04-08 17:29:11,747 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:29:11,753 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:29:11,754 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:29:11,754 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:29:11,811 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:29:11,811 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1250 ms
-2021-04-08 17:29:13,087 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:29:18,489 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:29:18,806 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:29:18,818 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:29:18,819 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:29:18,831 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:29:18,853 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:29:18,981 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:29:18,986 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:29:18,989 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:29:18,993 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:29:18,995 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:29:18,996 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:29:19,605 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:29:19,613 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.433 seconds (JVM running for 34.903)
-2021-04-08 17:30:06,338 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 17:30:06,339 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 17:30:06,348 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 8 ms
-2021-04-08 17:30:24,716 ERROR [http-nio-9081-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]] with root cause
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
-	at com.fasterxml.jackson.databind.DeserializationContext.wrongTokenException(DeserializationContext.java:1650)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportWrongTokenException(DeserializationContext.java:1400)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._locateTypeId(AsArrayTypeDeserializer.java:141)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:96)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71)
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:710)
-	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:68)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4524)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3570)
-	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
-	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
-	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:61)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:36)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:30:34,871 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:30:58,218 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:31:03,234 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:31:08,238 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 64064 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:31:08,238 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:31:08,834 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:31:08,836 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:31:08,864 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
-2021-04-08 17:31:09,443 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:31:09,449 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:31:09,450 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:31:09,450 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:31:09,505 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:31:09,506 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1236 ms
-2021-04-08 17:31:10,821 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:31:16,188 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:31:16,503 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:31:16,515 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:31:16,516 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:31:16,528 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:31:16,550 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:31:16,677 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:31:16,682 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:31:16,685 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:31:16,690 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:31:16,691 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:31:16,693 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:31:17,292 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:31:17,300 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.41 seconds (JVM running for 34.899)
-2021-04-08 17:33:55,382 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 17:33:55,383 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 17:33:55,392 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 9 ms
-2021-04-08 17:34:06,769 ERROR [http-nio-9081-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]] with root cause
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
-	at com.fasterxml.jackson.databind.DeserializationContext.wrongTokenException(DeserializationContext.java:1650)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportWrongTokenException(DeserializationContext.java:1400)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._locateTypeId(AsArrayTypeDeserializer.java:141)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:96)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71)
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:710)
-	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:68)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4524)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3570)
-	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
-	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
-	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:61)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:36)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:34:14,132 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:34:37,598 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-08 17:34:42,612 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
-2021-04-08 17:34:47,620 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 64074 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
-2021-04-08 17:34:47,620 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-08 17:34:48,219 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-08 17:34:48,220 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-08 17:34:48,246 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
-2021-04-08 17:34:48,831 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
-2021-04-08 17:34:48,838 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:34:48,838 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
-2021-04-08 17:34:48,838 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
-2021-04-08 17:34:48,893 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
-2021-04-08 17:34:48,894 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1239 ms
-2021-04-08 17:34:50,170 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-08 17:34:55,572 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-08 17:34:55,887 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
-2021-04-08 17:34:55,899 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
-2021-04-08 17:34:55,900 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-08 17:34:55,912 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-08 17:34:55,934 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-08 17:34:56,063 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-08 17:34:56,068 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-08 17:34:56,071 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-08 17:34:56,075 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-08 17:34:56,076 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-08 17:34:56,078 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-08 17:34:56,682 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-08 17:34:56,689 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.409 seconds (JVM running for 34.877)
-2021-04-08 17:36:24,093 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-04-08 17:36:24,094 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
-2021-04-08 17:36:24,102 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 8 ms
-2021-04-08 17:36:26,961 ERROR [http-nio-9081-exec-1] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java : 175] Servlet.service() for servlet [dispatcherServlet] in context with path [/wxgsc] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]] with root cause
-com.fasterxml.jackson.databind.exc.MismatchedInputException: Unexpected token (START_OBJECT), expected START_ARRAY: need JSON Array to contain As.WRAPPER_ARRAY type information for class java.lang.Object
- at [Source: (byte[])"{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","sessionKey":"jyduVl5WQc460b2fjvRb/A\u003d\u003d","token":"0obRfbrvbhqI9flzruAZk+z2OusY8RY0wI8VjDbb06ZJdws/5qur3sSh6471KFogVHpfiBp/JKs97KkgQnKTDw\u003d\u003d","id":2,"createDate":"Apr 4, 2021 4:39:59 PM"}"; line: 1, column: 1]
-	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
-	at com.fasterxml.jackson.databind.DeserializationContext.wrongTokenException(DeserializationContext.java:1650)
-	at com.fasterxml.jackson.databind.DeserializationContext.reportWrongTokenException(DeserializationContext.java:1400)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._locateTypeId(AsArrayTypeDeserializer.java:141)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:96)
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71)
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:710)
-	at com.fasterxml.jackson.databind.deser.impl.TypeWrappedDeserializer.deserialize(TypeWrappedDeserializer.java:68)
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4524)
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3570)
-	at org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer.deserialize(Jackson2JsonRedisSerializer.java:73)
-	at org.springframework.data.redis.core.AbstractOperations.deserializeValue(AbstractOperations.java:335)
-	at org.springframework.data.redis.core.AbstractOperations$ValueDeserializingRedisCallback.doInRedis(AbstractOperations.java:61)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:228)
-	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:188)
-	at org.springframework.data.redis.core.AbstractOperations.execute(AbstractOperations.java:96)
-	at org.springframework.data.redis.core.DefaultValueOperations.get(DefaultValueOperations.java:53)
-	at com.crh.wxbase.common.config.interceptor.ApiLoginHandlerInterceptor.preHandle(ApiLoginHandlerInterceptor.java:36)
-	at org.springframework.web.servlet.HandlerExecutionChain.applyPreHandle(HandlerExecutionChain.java:141)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1035)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.session.web.http.SessionRepositoryFilter.doFilterInternal(SessionRepositoryFilter.java:141)
-	at org.springframework.session.web.http.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:82)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-2021-04-08 17:36:33,000 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 14:44:49,564 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
-2021-04-11 14:44:49,662 INFO [main] c.c.w.s.c.SysWxUserControllerTest [StartupInfoLogger.java : 55] Starting SysWxUserControllerTest on USER-20200606SM with PID 1880 (started by Administrator in E:\github\crh-wx\wxbase)
-2021-04-11 14:44:49,668 INFO [main] c.c.w.s.c.SysWxUserControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
-2021-04-11 14:44:56,793 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-04-11 14:44:56,814 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2021-04-11 14:44:57,190 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 252ms. Found 0 Redis repository interfaces.
-2021-04-11 14:45:25,722 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2021-04-11 14:45:39,403 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
-2021-04-11 14:45:46,089 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
-2021-04-11 14:45:46,571 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
-2021-04-11 14:45:46,934 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
-2021-04-11 14:45:49,847 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
-2021-04-11 14:45:49,990 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
-2021-04-11 14:45:50,032 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
-2021-04-11 14:45:50,141 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
-2021-04-11 14:45:50,149 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
-2021-04-11 14:45:50,157 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
-2021-04-11 14:45:51,808 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
-2021-04-11 14:45:51,874 INFO [main] c.c.w.s.c.SysWxUserControllerTest [StartupInfoLogger.java : 61] Started SysWxUserControllerTest in 63.8 seconds (JVM running for 70.277)
-2021-04-11 14:45:56,191 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
-2021-04-11 14:45:56,192 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
-2021-04-11 14:45:56,193 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
-2021-04-11 14:45:56,206 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.system.controller.SysWxUserController.login
-2021-04-11 14:45:56,221 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : ["091VN20001gvvL10AB0005fnzF4VN204"]
-2021-04-11 14:45:56,333 INFO [main] c.c.w.s.c.SysWxUserController [SysWxUserController.java : 79] loginWxSession 微信用户登录code : 091VN20001gvvL10AB0005fnzF4VN204
-2021-04-11 14:45:59,720 INFO [main] c.c.w.s.c.SysWxUserController [SysWxUserController.java : 94] loginWxSession 响应内容为:{"session_key":"+PV5S0GVfTpnxbTbT518zA==","openid":"oPkYQ5PB0939moD3qTCLQB-vElz8"}
-2021-04-11 14:49:02,169 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
-2021-04-11 14:49:03,259 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
-2021-04-11 14:49:07,171 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功","data":"0obRfbrvbhqI9flzruAZkxDvJbs6HegtTn9ppawC5aakJeHZDFtn8ORzSDnVkogNwux0gy3qCGZIWH8v72nb8w\u003d\u003d"}
-2021-04-11 14:49:07,172 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :190982毫秒 
-2021-04-11 14:49:07,173 INFO [main] c.c.w.s.c.SysWxUserControllerTest [SysWxUserControllerTest.java : 23] {"code":200,"msg":"请求成功","data":"0obRfbrvbhqI9flzruAZkxDvJbs6HegtTn9ppawC5aakJeHZDFtn8ORzSDnVkogNwux0gy3qCGZIWH8v72nb8w\u003d\u003d"}
-2021-04-11 14:49:07,262 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
-2021-04-11 14:49:07,272 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
-2021-04-11 14:49:07,299 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-04-16 15:06:53,302 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-16 15:06:58,316 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-16 15:07:03,323 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 55] Starting GscCollectionControllerTest on macdeMac-mini.local with PID 30985 (started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-16 15:07:03,324 INFO [main] c.c.w.g.c.GscCollectionControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-16 15:07:04,069 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-16 15:07:04,072 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-16 15:07:04,108 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 21ms. Found 0 Redis repository interfaces.
+2021-04-16 15:07:07,830 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 15:07:14,278 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:07:14,854 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-16 15:07:14,886 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-16 15:07:14,923 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-16 15:07:15,124 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-16 15:07:15,130 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-16 15:07:15,133 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-16 15:07:15,138 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-16 15:07:15,140 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-16 15:07:15,143 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-16 15:07:15,751 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-16 15:07:15,764 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 61] Started GscCollectionControllerTest in 32.797 seconds (JVM running for 33.759)
+2021-04-16 15:07:15,998 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
+2021-04-16 15:07:15,998 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
+2021-04-16 15:07:15,998 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-16 15:07:16,000 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.queryCollection
+2021-04-16 15:07:16,005 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"page":1,"pageSize":10,"collectType":"0"}]
+2021-04-16 15:07:16,056 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:15:22,384 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-16 15:15:44,103 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-16 15:15:49,113 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5001 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-16 15:15:54,121 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 55] Starting GscCollectionControllerTest on macdeMac-mini.local with PID 31017 (started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-16 15:15:54,122 INFO [main] c.c.w.g.c.GscCollectionControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-16 15:15:54,762 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-16 15:15:54,765 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-16 15:15:54,796 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2021-04-16 15:15:58,105 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 15:16:04,267 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:16:04,916 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-16 15:16:04,943 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-16 15:16:04,988 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-16 15:16:05,279 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-16 15:16:05,293 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-16 15:16:05,301 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-16 15:16:05,309 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-16 15:16:05,311 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-16 15:16:05,315 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-16 15:16:05,857 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-16 15:16:05,872 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 61] Started GscCollectionControllerTest in 32.107 seconds (JVM running for 33.16)
+2021-04-16 15:16:06,104 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
+2021-04-16 15:16:06,104 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
+2021-04-16 15:16:06,104 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-16 15:16:06,105 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.queryCollection
+2021-04-16 15:16:06,109 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"page":1,"pageSize":10,"collectType":"0"}]
+2021-04-16 15:16:06,193 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-04-16 15:16:06,586 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-04-16 15:16:06,706 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹1","hasFolder":"1","collectType":"0","id":1},{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹2","hasFolder":"1","collectType":"0","id":2}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":2}}
+2021-04-16 15:16:06,706 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :602毫秒 
+2021-04-16 15:16:52,445 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45s754ms).
+2021-04-16 15:16:52,446 INFO [main] c.c.w.g.c.GscCollectionControllerTest [GscCollectionControllerTest.java : 35] {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹1","hasFolder":"1","collectType":"0","id":1},{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹2","hasFolder":"1","collectType":"0","id":2}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":2}}
+2021-04-16 15:16:52,494 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:16:52,497 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-04-16 15:16:52,712 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-04-16 15:17:20,304 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-16 15:17:25,315 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-16 15:17:30,322 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 55] Starting GscCollectionControllerTest on macdeMac-mini.local with PID 31035 (started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-16 15:17:30,323 INFO [main] c.c.w.g.c.GscCollectionControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-16 15:17:30,994 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-16 15:17:30,996 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-16 15:17:31,027 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2021-04-16 15:17:34,016 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 15:17:39,952 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:17:40,431 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-16 15:17:40,453 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-16 15:17:40,478 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-16 15:17:40,642 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-16 15:17:40,648 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-16 15:17:40,651 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-16 15:17:40,656 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-16 15:17:40,658 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-16 15:17:40,661 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-16 15:17:41,195 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-16 15:17:41,210 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 61] Started GscCollectionControllerTest in 31.208 seconds (JVM running for 32.078)
+2021-04-16 15:17:41,380 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
+2021-04-16 15:17:41,380 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
+2021-04-16 15:17:41,380 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-16 15:17:41,381 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.queryCollection
+2021-04-16 15:17:41,385 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"page":1,"pageSize":10,"collectType":"1"}]
+2021-04-16 15:17:41,484 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-04-16 15:17:41,774 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-04-16 15:17:41,869 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹3","hasFolder":"1","collectType":"1","id":3}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":1}}
+2021-04-16 15:17:41,869 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :490毫秒 
+2021-04-16 15:18:01,566 WARN [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool [HikariPool.java : 787] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s792ms).
+2021-04-16 15:18:01,568 INFO [main] c.c.w.g.c.GscCollectionControllerTest [GscCollectionControllerTest.java : 35] {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"收藏夹3","hasFolder":"1","collectType":"1","id":3}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":1}}
+2021-04-16 15:18:01,627 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:18:01,631 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-04-16 15:18:01,679 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-04-16 15:19:06,911 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-16 15:19:11,921 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5005 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-16 15:19:16,925 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 55] Starting GscCollectionControllerTest on macdeMac-mini.local with PID 31048 (started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-16 15:19:16,926 INFO [main] c.c.w.g.c.GscCollectionControllerTest [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-16 15:19:17,568 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-16 15:19:17,571 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-16 15:19:17,602 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2021-04-16 15:19:20,380 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-16 15:19:26,341 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:19:26,884 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-16 15:19:26,905 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-16 15:19:26,933 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-16 15:19:27,094 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-16 15:19:27,099 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-16 15:19:27,102 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-16 15:19:27,107 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-16 15:19:27,109 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-16 15:19:27,112 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-16 15:19:27,721 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-16 15:19:27,733 INFO [main] c.c.w.g.c.GscCollectionControllerTest [StartupInfoLogger.java : 61] Started GscCollectionControllerTest in 31.112 seconds (JVM running for 31.896)
+2021-04-16 15:19:27,894 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://localhost
+2021-04-16 15:19:27,894 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : 
+2021-04-16 15:19:27,894 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-16 15:19:27,895 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.queryCollection
+2021-04-16 15:19:27,899 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"page":1,"pageSize":10,"collectType":"0","parentFolderId":"1"}]
+2021-04-16 15:19:28,004 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-04-16 15:19:28,308 INFO [main] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-04-16 15:19:28,463 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"送东阳马生旭2","hasFolder":"0","collectType":"0","collectId":102,"parentFolderId":1,"id":4},{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"送东阳马生旭3","hasFolder":"0","collectType":"0","collectId":103,"parentFolderId":1,"id":5}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":2}}
+2021-04-16 15:19:28,463 INFO [main] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :570毫秒 
+2021-04-16 15:19:28,464 INFO [main] c.c.w.g.c.GscCollectionControllerTest [GscCollectionControllerTest.java : 35] {"code":200,"msg":"请求成功","items":[{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"送东阳马生旭2","hasFolder":"0","collectType":"0","collectId":102,"parentFolderId":1,"id":4},{"openId":"oPkYQ5PB0939moD3qTCLQB-vElz8","name":"送东阳马生旭3","hasFolder":"0","collectType":"0","collectId":103,"parentFolderId":1,"id":5}],"page":{"currentPage":1,"pageSize":10,"totalPages":1,"totalRows":2}}
+2021-04-16 15:19:28,496 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-16 15:19:28,501 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-04-16 15:19:28,518 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
