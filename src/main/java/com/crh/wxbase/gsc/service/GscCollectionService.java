@@ -33,15 +33,15 @@ public class GscCollectionService extends BaseService<GscCollectionMapper, GscCo
      * 分页查询收藏
      *
      * @param queryCollectionReq
-     * @param userInfo
+     * @param openId
      * @return
      */
-    public PageableItemsDto queryCollection(QueryCollectionReq queryCollectionReq, SysWxUser userInfo) {
+    public PageableItemsDto queryCollection(QueryCollectionReq queryCollectionReq, String openId) {
         QueryModel queryModel = new QueryModel();
         queryModel.setPage(queryCollectionReq.getPage());
         queryModel.setPageSize(queryCollectionReq.getPageSize());
         QueryWrapper<GscCollection> queryWrapper = new QueryWrapper<GscCollection>()
-                .eq(ColumnConsts.OPENID, userInfo.getOpenId())
+                .eq(ColumnConsts.OPENID, openId)
                 .orderByDesc(ColumnConsts.CREATE_DATE);
         if(StringUtils.isNotBlank(queryCollectionReq.getParentFolderId())){
             queryWrapper.eq(ColumnConsts.HAS_FOLDER, YesOrNoConsts.NO_INT);
@@ -53,7 +53,7 @@ public class GscCollectionService extends BaseService<GscCollectionMapper, GscCo
         boolean firstQuery = CommonConsts.ZERO_INT.equals(queryCollectionReq.getPage()) ||
                 CommonConsts.ONE_INT.equals(queryCollectionReq.getPage());
         if(firstQuery && CollectionUtils.isEmpty(itemsDto.getItems())){
-            GscCollection collection = insertFirstFolder(userInfo.getOpenId());
+            GscCollection collection = insertFirstFolder(openId);
             itemsDto.setItems(Arrays.asList(collection));
             PageDto pageDto = new PageDto();
             pageDto.setTotalPages(1L);

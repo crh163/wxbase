@@ -1,5 +1,6 @@
 package com.crh.wxbase.gsc.controller;
 
+import com.crh.wxbase.common.config.exception.WxbaseException;
 import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
@@ -33,7 +34,7 @@ public class GscCollectionControllerTest {
     private HttpServletRequest request;
 
     @Test
-    public void testQuery() {
+    public void testQuery() throws WxbaseException {
         QueryCollectionReq queryCollectionReq = new QueryCollectionReq();
         queryCollectionReq.setPage(1);
         queryCollectionReq.setPageSize(10);

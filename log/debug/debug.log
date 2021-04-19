@@ -125,3 +125,65 @@
 2021-04-19 18:11:23,436 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
 2021-04-19 18:11:23,439 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
 2021-04-19 18:11:23,464 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.
+2021-04-19 21:16:28,131 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-19 21:16:28,157 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on USER-20200606SM with PID 10596 (E:\github\crh-wx\wxbase\target\classes started by Administrator in E:\github\crh-wx\wxbase)
+2021-04-19 21:16:28,159 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-19 21:16:29,530 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-19 21:16:29,533 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-19 21:16:29,663 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 113ms. Found 0 Redis repository interfaces.
+2021-04-19 21:16:30,731 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
+2021-04-19 21:16:30,742 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
+2021-04-19 21:16:30,743 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-04-19 21:16:30,743 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-04-19 21:16:30,879 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-04-19 21:16:30,880 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 2634 ms
+2021-04-19 21:16:33,805 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 21:16:34,610 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 21:16:35,129 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
+2021-04-19 21:16:35,151 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
+2021-04-19 21:16:35,152 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-19 21:16:35,177 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-19 21:16:35,218 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-19 21:16:35,480 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-19 21:16:35,489 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-19 21:16:35,494 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-19 21:16:35,499 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_2
+2021-04-19 21:16:35,507 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-19 21:16:35,509 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-19 21:16:35,513 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-19 21:16:36,064 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-19 21:16:36,076 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 8.597 seconds (JVM running for 12.317)
+2021-04-19 21:17:37,813 INFO [http-nio-9081-exec-2] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-19 21:17:37,814 INFO [http-nio-9081-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-04-19 21:17:37,829 INFO [http-nio-9081-exec-2] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 15 ms
+2021-04-19 21:21:01,386 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-19 21:21:01,412 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on USER-20200606SM with PID 10604 (E:\github\crh-wx\wxbase\target\classes started by Administrator in E:\github\crh-wx\wxbase)
+2021-04-19 21:21:01,414 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-19 21:21:02,756 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-19 21:21:02,759 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-19 21:21:02,813 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 36ms. Found 0 Redis repository interfaces.
+2021-04-19 21:21:03,861 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
+2021-04-19 21:21:03,872 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
+2021-04-19 21:21:03,873 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-04-19 21:21:03,874 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-04-19 21:21:04,009 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-04-19 21:21:04,009 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 2509 ms
+2021-04-19 21:21:06,206 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-19 21:21:06,954 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-19 21:21:07,463 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
+2021-04-19 21:21:07,482 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
+2021-04-19 21:21:07,484 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-19 21:21:07,508 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-19 21:21:07,551 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-19 21:21:07,793 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-19 21:21:07,801 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-19 21:21:07,807 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-19 21:21:07,811 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_2
+2021-04-19 21:21:07,819 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-19 21:21:07,823 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-19 21:21:07,826 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-19 21:21:08,388 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-19 21:21:08,399 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 7.821 seconds (JVM running for 9.294)
+2021-04-19 21:21:53,420 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-19 21:21:53,421 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-04-19 21:21:53,441 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 20 ms
