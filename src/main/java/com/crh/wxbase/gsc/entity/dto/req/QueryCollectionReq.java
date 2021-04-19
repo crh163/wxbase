@@ -16,9 +16,6 @@ public class QueryCollectionReq {
     @ApiModelProperty("每页个数")
     private Integer pageSize;
 
-    @ApiModelProperty("收藏类型 0 诗词 1 诗人")
-    private String collectType;
-
     @ApiModelProperty("收藏夹id（点击某个收藏夹时传，不传则查询收藏夹）")
     private String parentFolderId;
 

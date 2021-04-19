@@ -30,8 +30,6 @@ public class ColumnConsts {
 
     public static final String PARENT_FOLDER_ID = "parent_folder_id";
 
-    public static final String COLLECT_TYPE = "collect_type";
-
     public static final String HAS_FOLDER = "has_folder";
 
 }

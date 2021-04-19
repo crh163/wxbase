@@ -26,12 +26,7 @@ public class GscCollection extends BaseModel {
     private String hasFolder;
 
     /**
-     * 收藏类型 0 诗词 1 诗人
-     */
-    private String collectType;
-
-    /**
-     * 诗词/诗人id
+     * 诗词id
      */
     private Long collectId;
 

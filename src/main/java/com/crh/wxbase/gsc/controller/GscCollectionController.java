@@ -35,8 +35,6 @@ public class GscCollectionController {
     @PostMapping("/queryCollection")
     public PageableItemsDto queryCollection(@RequestBody QueryCollectionReq queryCollectionReq) {
         SysWxUser userInfo = (SysWxUser) request.getAttribute(CommonConsts.USERINFO);
-        userInfo = new SysWxUser();
-        userInfo.setOpenId("oPkYQ5PB0939moD3qTCLQB-vElz8");
         return gscCollectionService.queryCollection(queryCollectionReq, userInfo);
     }
 
