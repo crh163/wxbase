@@ -187,3 +187,138 @@
 2021-04-19 21:21:53,420 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2021-04-19 21:21:53,421 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
 2021-04-19 21:21:53,441 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 20 ms
+2021-04-20 14:45:59,074 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-20 14:46:04,090 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5004 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-20 14:46:09,095 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 6603 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-20 14:46:09,096 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-20 14:46:09,684 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-20 14:46:09,686 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-20 14:46:09,711 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 16ms. Found 0 Redis repository interfaces.
+2021-04-20 14:46:10,302 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
+2021-04-20 14:46:10,308 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
+2021-04-20 14:46:10,309 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-04-20 14:46:10,309 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-04-20 14:46:10,364 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-04-20 14:46:10,364 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1235 ms
+2021-04-20 14:46:11,719 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-20 14:46:17,120 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 14:46:17,451 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
+2021-04-20 14:46:17,464 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
+2021-04-20 14:46:17,465 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-20 14:46:17,477 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-20 14:46:17,501 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-20 14:46:17,641 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-20 14:46:17,645 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-20 14:46:17,647 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-20 14:46:17,649 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-20 14:46:17,652 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_2
+2021-04-20 14:46:17,655 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-20 14:46:17,657 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_2
+2021-04-20 14:46:17,660 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-20 14:46:18,272 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-20 14:46:18,279 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.536 seconds (JVM running for 35.069)
+2021-04-20 14:46:22,882 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-20 14:46:22,882 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-04-20 14:46:22,917 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 34 ms
+2021-04-20 14:47:13,320 INFO [http-nio-9081-exec-6] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/gscCollection/insert
+2021-04-20 14:47:13,320 INFO [http-nio-9081-exec-6] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:47:13,321 INFO [http-nio-9081-exec-6] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:47:13,322 INFO [http-nio-9081-exec-6] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:47:13,326 INFO [http-nio-9081-exec-6] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh文件夹"}]
+2021-04-20 14:47:57,108 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/gscCollection/insert
+2021-04-20 14:47:57,109 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:47:57,109 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:47:57,109 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:47:57,109 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh文件夹"}]
+2021-04-20 14:50:34,515 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/gscCollection/insert
+2021-04-20 14:50:34,515 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:50:34,515 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:50:34,516 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:50:34,516 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh文件夹"}]
+2021-04-20 14:50:53,698 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/gscCollection/insert
+2021-04-20 14:50:53,698 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:50:53,698 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:50:53,699 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:50:53,699 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh文件夹"}]
+2021-04-20 14:51:14,295 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 14:51:38,489 INFO [background-preinit] o.h.validator.internal.util.Version [Version.java : 21] HV000001: Hibernate Validator 6.1.5.Final
+2021-04-20 14:51:43,502 WARN [main] o.s.boot.StartupInfoLogger [StartupInfoLogger.java : 116] InetAddress.getLocalHost().getHostName() took 5002 milliseconds to respond. Please verify your network configuration (macOS machines may need to add entries to /etc/hosts).
+2021-04-20 14:51:48,509 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 55] Starting WxbaseApplication on macdeMac-mini.local with PID 6653 (/Users/mac/rory/gitwork/wxbase/target/classes started by mac in /Users/mac/rory/gitwork/wxbase)
+2021-04-20 14:51:48,510 INFO [main] com.crh.wxbase.WxbaseApplication [SpringApplication.java : 651] No active profile set, falling back to default profiles: default
+2021-04-20 14:51:49,122 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 249] Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-04-20 14:51:49,123 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 127] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-04-20 14:51:49,149 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java : 187] Finished Spring Data repository scanning in 17ms. Found 0 Redis repository interfaces.
+2021-04-20 14:51:49,786 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 108] Tomcat initialized with port(s): 9081 (http)
+2021-04-20 14:51:49,792 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Initializing ProtocolHandler ["http-nio-9081"]
+2021-04-20 14:51:49,793 INFO [main] o.a.catalina.core.StandardService [DirectJDKLog.java : 173] Starting service [Tomcat]
+2021-04-20 14:51:49,793 INFO [main] o.a.catalina.core.StandardEngine [DirectJDKLog.java : 173] Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-04-20 14:51:49,858 INFO [main] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring embedded WebApplicationContext
+2021-04-20 14:51:49,859 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java : 285] Root WebApplicationContext: initialization completed in 1310 ms
+2021-04-20 14:51:51,222 INFO [main] s.d.s.w.PropertySourcedRequestMappingHandlerMapping [PropertySourcedRequestMappingHandlerMapping.java : 69] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-04-20 14:51:56,638 INFO [main] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 181] Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-20 14:51:56,958 INFO [main] o.a.coyote.http11.Http11NioProtocol [DirectJDKLog.java : 173] Starting ProtocolHandler ["http-nio-9081"]
+2021-04-20 14:51:56,970 INFO [main] o.s.b.w.e.tomcat.TomcatWebServer [TomcatWebServer.java : 220] Tomcat started on port(s): 9081 (http) with context path '/wxgsc'
+2021-04-20 14:51:56,971 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 160] Context refreshed
+2021-04-20 14:51:56,983 INFO [main] s.d.s.w.p.DocumentationPluginsBootstrapper [DocumentationPluginsBootstrapper.java : 163] Found 1 custom documentation plugin(s)
+2021-04-20 14:51:57,006 INFO [main] s.d.s.w.s.ApiListingReferenceScanner [ApiListingReferenceScanner.java : 41] Scanning for api listing references
+2021-04-20 14:51:57,147 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_1
+2021-04-20 14:51:57,152 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_1
+2021-04-20 14:51:57,153 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_1
+2021-04-20 14:51:57,155 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: deleteByIdsUsingPOST_1
+2021-04-20 14:51:57,158 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: insertUsingPOST_2
+2021-04-20 14:51:57,162 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: queryUsingPOST_2
+2021-04-20 14:51:57,164 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: updateUsingPOST_2
+2021-04-20 14:51:57,166 INFO [main] s.d.s.w.r.o.CachingOperationNameGenerator [CachingOperationNameGenerator.java : 40] Generating unique operation named: loginUsingPOST_1
+2021-04-20 14:51:57,771 INFO [main] o.s.s.a.ScheduledAnnotationBeanPostProcessor [ScheduledAnnotationBeanPostProcessor.java : 309] No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2021-04-20 14:51:57,778 INFO [main] com.crh.wxbase.WxbaseApplication [StartupInfoLogger.java : 61] Started WxbaseApplication in 29.622 seconds (JVM running for 35.142)
+2021-04-20 14:52:14,176 INFO [http-nio-9081-exec-1] o.a.c.c.C.[.[localhost].[/wxgsc] [DirectJDKLog.java : 173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-20 14:52:14,176 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 525] Initializing Servlet 'dispatcherServlet'
+2021-04-20 14:52:14,185 INFO [http-nio-9081-exec-1] o.s.web.servlet.DispatcherServlet [FrameworkServlet.java : 547] Completed initialization in 9 ms
+2021-04-20 14:52:39,663 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/insert
+2021-04-20 14:52:39,664 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:52:39,665 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:52:39,669 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:52:39,671 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh夹"}]
+2021-04-20 14:52:39,711 INFO [http-nio-9081-exec-9] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 110] HikariPool-1 - Starting...
+2021-04-20 14:52:39,934 INFO [http-nio-9081-exec-9] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 123] HikariPool-1 - Start completed.
+2021-04-20 14:52:39,969 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
+2021-04-20 14:52:39,970 INFO [http-nio-9081-exec-9] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :307毫秒 
+2021-04-20 14:53:08,248 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/insert
+2021-04-20 14:53:08,249 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:53:08,249 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:53:08,249 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.insert
+2021-04-20 14:53:08,250 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"name":"crh夹"}]
+2021-04-20 14:53:08,274 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
+2021-04-20 14:53:08,274 INFO [http-nio-9081-exec-10] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :26毫秒 
+2021-04-20 14:54:54,304 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/update
+2021-04-20 14:54:54,304 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:54:54,304 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:54:54,304 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.update
+2021-04-20 14:54:54,305 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"id":10,"name":"crh文件夹"}]
+2021-04-20 14:54:54,348 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
+2021-04-20 14:54:54,348 INFO [http-nio-9081-exec-2] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :44毫秒 
+2021-04-20 14:55:22,020 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/delete
+2021-04-20 14:55:22,020 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:55:22,021 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:55:22,021 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.delete
+2021-04-20 14:55:22,021 INFO [http-nio-9081-exec-4] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"id":10}]
+2021-04-20 14:55:36,998 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/delete
+2021-04-20 14:55:36,999 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:55:36,999 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:55:36,999 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.delete
+2021-04-20 14:55:36,999 INFO [http-nio-9081-exec-5] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"id":10}]
+2021-04-20 14:55:40,124 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/delete
+2021-04-20 14:55:40,124 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:55:40,125 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:55:40,125 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.delete
+2021-04-20 14:55:40,125 INFO [http-nio-9081-exec-7] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"id":10}]
+2021-04-20 14:55:51,036 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 37] URL : http://127.0.0.1:9081/wxgsc/api/gscCollection/delete
+2021-04-20 14:55:51,036 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 38] HTTP METHOD : POST
+2021-04-20 14:55:51,036 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 39] IP : 127.0.0.1
+2021-04-20 14:55:51,036 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 40] CLASS_METHOD : com.crh.wxbase.gsc.controller.GscCollectionController.delete
+2021-04-20 14:55:51,037 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 42] PARAMS : [{"id":10}]
+2021-04-20 14:55:51,061 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 53] RESULT : {"code":200,"msg":"请求成功"}
+2021-04-20 14:55:51,062 INFO [http-nio-9081-exec-8] c.c.w.c.c.aspect.ControllerLogAspect [ControllerLogAspect.java : 65] 耗时 :26毫秒 
+2021-04-20 15:13:23,079 INFO [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor [ExecutorConfigurationSupport.java : 218] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-04-20 15:13:23,082 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 350] HikariPool-1 - Shutdown initiated...
+2021-04-20 15:13:23,088 INFO [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource [HikariDataSource.java : 352] HikariPool-1 - Shutdown completed.

@@ -10,11 +10,9 @@ import com.crh.wxbase.common.entity.page.PageableItemsDto;
 import com.crh.wxbase.common.entity.resp.Response;
 import com.crh.wxbase.common.utils.ResponseUtil;
 import com.crh.wxbase.gsc.entity.db.GscCollection;
-import com.crh.wxbase.gsc.entity.dto.req.collection.CollectionReq;
-import com.crh.wxbase.gsc.entity.dto.req.collection.DeleteReq;
-import com.crh.wxbase.gsc.entity.dto.req.collection.InsertReq;
+import com.crh.wxbase.gsc.entity.dto.req.collection.*;
 import com.crh.wxbase.gsc.entity.dto.req.QueryCollectionReq;
-import com.crh.wxbase.gsc.entity.dto.req.collection.UpdateReq;
+import com.crh.wxbase.gsc.entity.dto.req.common.BaseIdReq;
 import com.crh.wxbase.gsc.service.GscCollectionService;
 import com.crh.wxbase.system.entity.SysWxUser;
 import io.swagger.annotations.Api;
@@ -33,7 +31,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 @Api(tags = "收藏")
-@RequestMapping("/gscCollection")
+@RequestMapping("/api/gscCollection")
 public class GscCollectionController {
 
     @Autowired
@@ -64,19 +62,20 @@ public class GscCollectionController {
     @PostMapping("/update")
     public Response update(@RequestBody UpdateReq updateReq) throws WxbaseException {
         GscCollection gscCollection = new GscCollection();
-        gscCollection.setId(updateReq.getId());
         gscCollection.setName(updateReq.getName());
         gscCollectionService.update(gscCollection, new QueryWrapper<GscCollection>()
                 .eq(ColumnConsts.OPENID, getOpenId())
+                .eq(ColumnConsts.HAS_FOLDER, YesOrNoConsts.YES_STRING)
                 .eq(ColumnConsts.ID, updateReq.getId()));
         return ResponseUtil.getSuccess();
     }
 
     @ApiOperation("删除收藏夹")
     @PostMapping("/delete")
-    public Response delete(@RequestBody DeleteReq deleteReq) throws WxbaseException {
+    public Response delete(@RequestBody BaseIdReq deleteReq) throws WxbaseException {
         gscCollectionService.remove(new QueryWrapper<GscCollection>()
                 .eq(ColumnConsts.OPENID, getOpenId())
+                .eq(ColumnConsts.HAS_FOLDER, YesOrNoConsts.YES_STRING)
                 .eq(ColumnConsts.ID, deleteReq.getId()));
         return ResponseUtil.getSuccess();
     }
@@ -94,6 +93,27 @@ public class GscCollectionController {
         return ResponseUtil.getSuccess();
     }
 
+    @ApiOperation("取消收藏")
+    @PostMapping("/cancelCollection")
+    public Response cancelCollection(@RequestBody BaseIdReq cancelReq) throws WxbaseException {
+        gscCollectionService.remove(new QueryWrapper<GscCollection>()
+                .eq(ColumnConsts.OPENID, getOpenId())
+                .eq(ColumnConsts.HAS_FOLDER, YesOrNoConsts.NO_STRING)
+                .eq(ColumnConsts.ID, cancelReq.getId()));
+        return ResponseUtil.getSuccess();
+    }
+
+    @ApiOperation("更换收藏夹")
+    @PostMapping("/replaceCollection")
+    public Response replaceCollection(@RequestBody ReplaceCollectionReq replaceReq) throws WxbaseException {
+        GscCollection gscCollection = new GscCollection();
+        gscCollection.setParentFolderId(replaceReq.getNewCollectionId());
+        gscCollectionService.update(gscCollection, new QueryWrapper<GscCollection>()
+                .eq(ColumnConsts.OPENID, getOpenId())
+                .eq(ColumnConsts.HAS_FOLDER, YesOrNoConsts.NO_STRING)
+                .eq(ColumnConsts.ID, replaceReq.getId()));
+        return ResponseUtil.getSuccess();
+    }
 
     /**
      * 获取openId
