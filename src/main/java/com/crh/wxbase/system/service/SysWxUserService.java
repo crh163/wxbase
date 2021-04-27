@@ -6,6 +6,7 @@ import com.crh.wxbase.common.constant.CommonConsts;
 import com.crh.wxbase.common.constant.EncryptConsts;
 import com.crh.wxbase.common.service.BaseService;
 import com.crh.wxbase.common.utils.ArithmeticUtil;
+import com.crh.wxbase.system.entity.SysUser;
 import com.crh.wxbase.system.entity.SysWxUser;
 import com.crh.wxbase.system.mapper.SysWxUserMapper;
 import com.google.gson.Gson;
@@ -15,6 +16,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -57,6 +60,13 @@ public class SysWxUserService extends BaseService<SysWxUserMapper, SysWxUser> {
         ValueOperations<String, String> opsForValue = redisTemplate.opsForValue();
         opsForValue.set(token, new Gson().toJson(sysWxUser), 30, TimeUnit.DAYS);
         return token;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = null;
+        for(String x : list){
+
+        }
     }
 
 }

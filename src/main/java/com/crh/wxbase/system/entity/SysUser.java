@@ -4,6 +4,7 @@ import com.crh.wxbase.common.entity.base.BaseModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
@@ -14,6 +15,7 @@ import java.io.Serializable;
  * @date 2021-02-24 17:10
  */
 @Data
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
 public class SysUser extends BaseModel implements Serializable {
